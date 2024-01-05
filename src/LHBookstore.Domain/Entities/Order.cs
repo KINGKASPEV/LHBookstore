@@ -1,4 +1,5 @@
 ﻿using LHBookstore.Domain.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LHBookstore.Domain.Entities
 {

@@ -1,11 +1,8 @@
-﻿using LHBookstore.Application.Implementations;
-using LHBookstore.Application.Implementations.Books;
+﻿using LHBookstore.Application.Implementations.Books;
 using LHBookstore.Application.Implementations.Orders;
-using LHBookstore.Application.Services;
 using LHBookstore.Application.Services.Books;
 using LHBookstore.Application.Services.Orders;
 using LHBookstore.Infrastructure;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
 namespace LHBookstore.Application.ServiceExtensions

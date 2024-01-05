@@ -1,6 +1,8 @@
-﻿namespace LHBookstore.Application.Implementations.Orders
+﻿using LHBookstore.Application.Services.Orders;
+
+namespace LHBookstore.Application.Implementations.Orders
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
     }
 }

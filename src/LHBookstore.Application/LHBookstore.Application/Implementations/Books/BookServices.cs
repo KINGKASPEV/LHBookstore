@@ -1,6 +1,8 @@
-﻿namespace LHBookstore.Application.Implementations.Books
+﻿using LHBookstore.Application.Services.Books;
+
+namespace LHBookstore.Application.Implementations.Books
 {
-    public class BookService
+    public class BookServices : IBookServices
     {
     }
 }

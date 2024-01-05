@@ -1,6 +1,6 @@
 ﻿namespace LHBookstore.Application.Services.Books
 {
-    public interface IBookService
+    public interface IBookServices
     {
     }
 }

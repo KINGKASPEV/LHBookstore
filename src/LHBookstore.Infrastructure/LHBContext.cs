@@ -9,5 +9,11 @@ namespace LHBookstore.Infrastructure
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<OrderItem>().HasOne(x => x.Order).WithMany(x => x.OrderItems);
+        }
     }
 }
