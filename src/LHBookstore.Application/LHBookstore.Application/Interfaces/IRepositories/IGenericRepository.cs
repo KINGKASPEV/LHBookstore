@@ -1,12 +1,12 @@
 ﻿using System.Linq.Expressions;
 
-namespace LHBookstore.Application.Services
+namespace LHBookstore.Application.Interfaces.IRepositories
 {
     public interface IGenericRepository<T> where T : class
     {
-        Task<T> GetById(int id);
-        Task<List<T>> GetAll();
-        Task<List<T>> FindByCondition(Expression<Func<T, bool>> predicate);
+        T GetById(string id);
+        List<T> GetAll();
+        List<T> FindByCondition(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

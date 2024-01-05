@@ -1,6 +1,8 @@
-﻿namespace LHBookstore.Application.Implementations.Repositories
+﻿using LHBookstore.Application.Interfaces.IRepositories;
+
+namespace LHBookstore.Application.Implementations.Repositories
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
     }
 }
