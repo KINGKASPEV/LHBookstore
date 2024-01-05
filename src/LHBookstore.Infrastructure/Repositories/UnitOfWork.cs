@@ -1,4 +1,4 @@
-﻿using LHBookstore.Application.Interfaces.IRepositories;
+﻿using LHBookstore.Application.Interfaces.Repositories;
 using LHBookstore.Infrastructure;
 
 namespace LHBookstore.Application.Implementations.Repositories

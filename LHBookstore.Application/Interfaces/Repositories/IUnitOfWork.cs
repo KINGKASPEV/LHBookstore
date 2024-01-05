@@ -1,4 +1,4 @@
-﻿namespace LHBookstore.Application.Interfaces.IRepositories
+﻿namespace LHBookstore.Application.Interfaces.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {

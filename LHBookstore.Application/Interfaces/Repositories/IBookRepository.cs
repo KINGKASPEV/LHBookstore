@@ -1,8 +1,7 @@
 ﻿using LHBookstore.Domain.Entities;
 using System.Linq.Expressions;
-using System.Net.Sockets;
 
-namespace LHBookstore.Application.Interfaces.IRepositories
+namespace LHBookstore.Application.Interfaces.Repositories
 {
     public interface IBookRepository
     {

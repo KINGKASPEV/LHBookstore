@@ -1,4 +1,4 @@
-﻿using LHBookstore.Application.Interfaces.IRepositories;
+﻿using LHBookstore.Application.Interfaces.Repositories;
 using LHBookstore.Domain.Entities;
 using LHBookstore.Infrastructure;
 using System.Linq.Expressions;

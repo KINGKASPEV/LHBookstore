@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace LHBookstore.Application.Interfaces.IRepositories
+namespace LHBookstore.Application.Interfaces.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
