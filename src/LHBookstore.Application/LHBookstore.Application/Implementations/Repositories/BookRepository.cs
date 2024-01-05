@@ -13,7 +13,7 @@ namespace LHBookstore.Application.Implementations.Repositories
         public List<Book> FindBook(Expression<Func<Book, bool>> condition) => FindByCondition(condition);
         public Book GetBookById(string id) => GetById(id);
         public List<Book> GetBooks() => GetAll();
-        public void UpdateBook(Book ticket) => Update(ticket);
+        public void UpdateBook(Book book) => Update(book);
     }
 }
 
