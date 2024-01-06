@@ -8,12 +8,26 @@ namespace LHBookstore.Application.Implementations.Repositories
     public class BookRepository : GenericRepository<Book>, IBookRepository
     {
         public BookRepository(LHBContext dbContext) : base(dbContext) { }
-        public void AddBook(Book book) => Add(book);
-        public void DeleteBook(Book book) => Delete(book);
-        public List<Book> FindBook(Expression<Func<Book, bool>> condition) => FindByCondition(condition);
-        public Book GetBookById(string id) => GetById(id);
-        public List<Book> GetBooks() => GetAll();
-        public void UpdateBook(Book book) => Update(book);
+
+        public async Task AddBookAsync(Book book) => await AddAsync(book);
+
+        public async Task DeleteBookAsync(Book book)
+        {
+            Delete(book);
+            await SaveChangesAsync();
+        }
+
+        public async Task<List<Book>> FindBookAsync(Expression<Func<Book, bool>> condition) => await FindByConditionAsync(condition);
+       
+        public async Task<Book> GetBookByIdAsync(string id) => await GetByIdAsync(id);
+
+        public async Task<List<Book>> GetAllBooksAsync() => await GetAllAsync();
+
+        public async Task UpdateBookAsync(Book book)
+        {
+            Update(book);
+            await SaveChangesAsync();
+        }
     }
 }
 

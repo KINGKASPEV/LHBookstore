@@ -1,16 +1,19 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace LHBookstore.Application.Interfaces.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
-        T GetById(string id);
-        List<T> GetAll();
-        List<T> FindByCondition(Expression<Func<T, bool>> predicate);
-        void Add(T entity);
+        Task<T> GetByIdAsync(string id);
+        Task<List<T>> GetAllAsync();
+        Task<List<T>> FindByConditionAsync(Expression<Func<T, bool>> predicate);
+        Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);
-        void SaveChanges();
-        bool Exists(Expression<Func<T, bool>> predicate);
+        Task SaveChangesAsync();
+        Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate);
     }
 }

@@ -5,11 +5,11 @@ namespace LHBookstore.Application.Interfaces.Repositories
 {
     public interface IOrderRepository
     {
-        List<Order> GetAllOrders();
-        void AddOrder(Order order);
-        void DeleteOrder(Order order);
-        public List<Order> FindOrders(Expression<Func<Order, bool>> condition);
-        Order GetOrderById(string id);
-        void UpdateOrder(Order order);
+        Task<List<Order>> GetAllOrdersAsync();
+        Task AddOrderAsync(Order order);
+        Task DeleteOrderAsync(Order order);
+        Task<List<Order>> FindOrdersAsync(Expression<Func<Order, bool>> condition);
+        Task<Order> GetOrderByIdAsync(string id);
+        Task UpdateOrderAsync(Order order);
     }
 }

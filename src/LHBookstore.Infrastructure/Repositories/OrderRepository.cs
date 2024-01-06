@@ -8,11 +8,25 @@ namespace LHBookstore.Application.Implementations.Repositories
     public class OrderRepository : GenericRepository<Order>, IOrderRepository
     {
         public OrderRepository(LHBContext dbContext) : base(dbContext) { }
-        public void AddOrder(Order order) => Add(order);
-        public void DeleteOrder(Order order) => Delete(order);
-        public List<Order> FindOrders(Expression<Func<Order, bool>> condition) => FindByCondition(condition);
-        public Order GetOrderById(string id) => GetById(id);
-        public List<Order> GetAllOrders() => GetAll();
-        public void UpdateOrder(Order order) => Update(order);
+
+        public async Task AddOrderAsync(Order order) => await AddAsync(order);
+
+        public async Task DeleteOrderAsync(Order order)
+        {
+            Delete(order);
+            await SaveChangesAsync();
+        }
+
+        public async Task<List<Order>> FindOrdersAsync(Expression<Func<Order, bool>> condition) => await FindByConditionAsync(condition);
+
+        public async Task<Order> GetOrderByIdAsync(string id) => await GetByIdAsync(id);
+
+        public async Task<List<Order>> GetAllOrdersAsync() => await GetAllAsync();
+
+        public async Task UpdateOrderAsync(Order order)
+        {
+            Update(order);
+            await SaveChangesAsync();
+        }
     }
 }

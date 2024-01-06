@@ -4,6 +4,6 @@
     {
         IBookRepository BookRepository { get; }
         IOrderRepository OrderRepository { get; }
-        int SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }

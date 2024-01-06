@@ -1,5 +1,6 @@
 ﻿using LHBookstore.Application.Interfaces.Repositories;
 using LHBookstore.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace LHBookstore.Application.Implementations.Repositories
@@ -7,14 +8,51 @@ namespace LHBookstore.Application.Implementations.Repositories
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly LHBContext _dbContext;
-        public GenericRepository(LHBContext dbContext) => _dbContext = dbContext;
-        public void Add(T entity) => _dbContext.Set<T>().Add(entity);
-        public void Delete(T entity) => _dbContext.Set<T>().Remove(entity);
-        public bool Exists(Expression<Func<T, bool>> predicate) => _dbContext.Set<T>().Any(predicate);
-        public List<T> FindByCondition(Expression<Func<T, bool>> predicate) => _dbContext.Set<T>().Where(predicate).ToList();
-        public List<T> GetAll() => _dbContext.Set<T>().ToList();
-        public T GetById(string id) => _dbContext.Set<T>().Find(id);
-        public void SaveChanges() => _dbContext.SaveChanges();
-        public void Update(T entity) => _dbContext.Set<T>().Update(entity);
+
+        public GenericRepository(LHBContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public async Task AddAsync(T entity)
+        {
+            await _dbContext.Set<T>().AddAsync(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _dbContext.Set<T>().Remove(entity);
+        }
+
+        public async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbContext.Set<T>().AnyAsync(predicate);
+        }
+
+        public async Task<List<T>> FindByConditionAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbContext.Set<T>().Where(predicate).ToListAsync();
+        }
+
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _dbContext.Set<T>().ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(string id)
+        {
+            return await _dbContext.Set<T>().FindAsync(id);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public void Update(T entity)
+        {
+            _dbContext.Set<T>().Update(entity);
+        }
     }
 }
+

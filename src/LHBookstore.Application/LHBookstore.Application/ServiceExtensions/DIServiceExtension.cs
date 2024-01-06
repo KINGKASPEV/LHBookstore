@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LHBookstore.Application.ServiceExtensions
 {
-    public static class DIExtension
+    public static class DIServiceExtension
     {
         public static void AddDependencies(this IServiceCollection services, IConfiguration config)
         {
