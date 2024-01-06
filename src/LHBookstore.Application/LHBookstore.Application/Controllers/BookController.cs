@@ -15,6 +15,32 @@ namespace LHBookstore.Application.Controllers
             _bookServices = bookServices;
         }
 
+        [HttpPost("add")]
+        public async Task<IActionResult> AddBook([FromBody] BookRequestDto book)
+        {
+            var response = await _bookServices.AddBookAsync(book);
+
+            if (response.Succeeded)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
+
+        [HttpPut("edit/{id}")]
+        public async Task<IActionResult> UpdateBook(string id, [FromBody] BookRequestDto book)
+        {
+            var response = await _bookServices.UpdateBookAsync(id, book);
+
+            if (response.Succeeded)
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
+        }
+
         [HttpGet("All-books")]
         public async Task<IActionResult> GetAllBooks([FromQuery] int page = 1, [FromQuery] int perPage = 10)
         {
@@ -28,7 +54,7 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
-        [HttpGet("book/{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetBookById(string id)
         {
             var response = await _bookServices.GetBookByIdAsync(id);
@@ -41,31 +67,7 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
-        [HttpPost("add-book")]
-        public async Task<IActionResult> AddBook([FromBody] BookRequestDto book)
-        {
-            var response = await _bookServices.AddBookAsync(book);
-
-            if (response.Succeeded)
-            {
-                return Ok(response);
-            }
-
-            return BadRequest(response);
-        }
-
-        [HttpPut("edit-book/{id}")]
-        public async Task<IActionResult> UpdateBook(string id, [FromBody] BookRequestDto book)
-        {
-            var response = await _bookServices.UpdateBookAsync(id, book);
-
-            if (response.Succeeded)
-            {
-                return Ok(response);
-            }
-
-            return BadRequest(response);
-        }
+        
 
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteBook(string id)

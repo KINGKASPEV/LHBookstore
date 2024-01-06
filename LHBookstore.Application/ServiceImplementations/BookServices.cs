@@ -55,19 +55,30 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<BookResponseDto>> AddBookAsync(BookRequestDto book)
         {
-            if (book == null)
+            try
             {
-                return ApiResponse<BookResponseDto>.Failed(false, "Book cannot be null", 400, null);
+                if (book == null)
+                {
+                    return ApiResponse<BookResponseDto>.Failed(false, "Book cannot be null", 400, null);
+                }
+
+                var newBook = _mapper.Map<Book>(book);
+                await _unitOfWork.BookRepository.AddBookAsync(newBook);
+                await _unitOfWork.SaveChangesAsync();
+
+                var newBookDto = _mapper.Map<BookResponseDto>(newBook);
+
+                return ApiResponse<BookResponseDto>.Success(newBookDto, "Book added successfully", 201);
             }
+            catch (Exception ex)
+            {
+                // Log the exception for further investigation
+                Console.WriteLine($"Error adding book: {ex.Message}");
 
-            var newBook = _mapper.Map<Book>(book);
-            await _unitOfWork.BookRepository.AddBookAsync(newBook);
-            await _unitOfWork.SaveChangesAsync();
-
-            var newBookDto = _mapper.Map<BookResponseDto>(newBook);
-
-            return ApiResponse<BookResponseDto>.Success(newBookDto, "Book added successfully", 201);
+                return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while adding the book", 500, new List<string> { ex.Message });
+            }
         }
+
 
         public async Task<ApiResponse<BookResponseDto>> UpdateBookAsync(string id, BookRequestDto book)
         {
