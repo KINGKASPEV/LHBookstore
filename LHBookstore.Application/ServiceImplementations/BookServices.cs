@@ -21,6 +21,11 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<List<BookResponseDto>>> GetAllBooksAsync(int page, int perPage)
         {
+            if (page <= 0 || perPage <= 0)
+            {
+                return ApiResponse<List<BookResponseDto>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
+            }
+
             var allBooks = await _unitOfWork.BookRepository.GetAllBooksAsync();
             var paginatedBooks = await Pagination<Book>.GetPager(allBooks, perPage, page, b => b.Title, b => b.Id);
 
@@ -31,10 +36,17 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<BookResponseDto>> GetBookByIdAsync(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return ApiResponse<BookResponseDto>.Failed(false, "Book id cannot be null or empty", 400, null);
+            }
+
             var book = await _unitOfWork.BookRepository.GetBookByIdAsync(id);
 
             if (book == null)
+            {
                 return ApiResponse<BookResponseDto>.Failed(false, $"Book with id {id} not found", 404, null);
+            }
 
             var bookDto = _mapper.Map<BookResponseDto>(book);
 
@@ -43,6 +55,11 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<BookResponseDto>> AddBookAsync(BookRequestDto book)
         {
+            if (book == null)
+            {
+                return ApiResponse<BookResponseDto>.Failed(false, "Book cannot be null", 400, null);
+            }
+
             var newBook = _mapper.Map<Book>(book);
             await _unitOfWork.BookRepository.AddBookAsync(newBook);
             await _unitOfWork.SaveChangesAsync();
@@ -54,10 +71,17 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<BookResponseDto>> UpdateBookAsync(string id, BookRequestDto book)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return ApiResponse<BookResponseDto>.Failed(false, "Book id cannot be null or empty", 400, null);
+            }
+
             var existingBook = await _unitOfWork.BookRepository.GetBookByIdAsync(id);
 
             if (existingBook == null)
+            {
                 return ApiResponse<BookResponseDto>.Failed(false, $"Book with id {id} not found", 404, null);
+            }
 
             _mapper.Map(book, existingBook);
 
@@ -71,10 +95,17 @@ namespace LHBookstore.Application.ServiceImplementations
 
         public async Task<ApiResponse<string>> DeleteBookAsync(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                return ApiResponse<string>.Failed(false, "Book id cannot be null or empty", 400, null);
+            }
+
             var existingBook = await _unitOfWork.BookRepository.GetBookByIdAsync(id);
 
             if (existingBook == null)
+            {
                 return ApiResponse<string>.Failed(false, $"Book with id {id} not found", 404, null);
+            }
 
             await _unitOfWork.BookRepository.DeleteBookAsync(existingBook);
             await _unitOfWork.SaveChangesAsync();
