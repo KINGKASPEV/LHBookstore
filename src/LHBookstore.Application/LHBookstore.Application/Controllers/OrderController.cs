@@ -39,9 +39,9 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpGet("all-order")]
-        public async Task<IActionResult> GetAllOrdersAsync()
+        public async Task<IActionResult> GetAllOrdersAsync([FromQuery] int page, [FromQuery] int perPage)
         {
-            var response = await _orderService.GetAllOrdersAsync();
+            var response = await _orderService.GetAllOrdersAsync(page, perPage);
             if (response.Succeeded)
             {
                 return Ok(response);

@@ -2,6 +2,7 @@
 using LHBookstore.Application.DTOs.Order;
 using LHBookstore.Application.Interfaces.Repositories;
 using LHBookstore.Application.Interfaces.Services;
+using LHBookstore.Application.Utilities;
 using LHBookstore.Domain;
 using LHBookstore.Domain.Entities;
 
@@ -18,23 +19,40 @@ namespace LHBookstore.Application.ServiceImplementations
             _mapper = mapper;
         }
 
-        public async Task<ApiResponse<List<OrderResponseDto>>> GetAllOrdersAsync()
+        public async Task<ApiResponse<PageResult<List<OrderResponseDto>>>> GetAllOrdersAsync(int page, int perPage)
         {
             try
             {
-                var orders = await _unitOfWork.OrderRepository.GetAllOrdersAsync();
-                var orderDtos = _mapper.Map<List<OrderResponseDto>>(orders);
+                if (page <= 0 || perPage <= 0)
+                {
+                    return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
+                }
 
-                return ApiResponse<List<OrderResponseDto>>.Success(orderDtos, "Orders retrieved successfully", 200);
+                var orders = await _unitOfWork.OrderRepository.GetAllOrdersAsync();
+                var paginatedOrders = await Pagination<Order>.GetPager(orders, perPage, page, b => b.Id, b => b.Id);
+
+                var orderDtos = _mapper.Map<List<OrderResponseDto>>(paginatedOrders.Data);
+
+                var pageResult = new PageResult<List<OrderResponseDto>>
+                {
+                    Data = orderDtos,
+                    TotalPageCount = paginatedOrders.TotalPageCount,
+                    CurrentPage = paginatedOrders.CurrentPage,
+                    PerPage = paginatedOrders.PerPage,
+                    TotalCount = paginatedOrders.TotalCount
+                };
+
+                return ApiResponse<PageResult<List<OrderResponseDto>>>.Success(pageResult, "Orders retrieved successfully", 200);
             }
             catch (Exception ex)
             {
                 // Log the exception for further investigation
                 Console.WriteLine($"Error retrieving orders: {ex.Message}");
 
-                return ApiResponse<List<OrderResponseDto>>.Failed(false, "An error occurred while retrieving orders", 500, new List<string> { ex.Message });
+                return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "An error occurred while retrieving orders", 500, new List<string> { ex.Message });
             }
         }
+
 
         public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string id)
         {
