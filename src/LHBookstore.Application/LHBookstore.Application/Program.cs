@@ -1,11 +1,11 @@
 using LHBookstore.Application.ServiceExtensions;
 using LHBookstore.Configurations;
 using LHBookstore.Mapper;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var config = builder.Configuration;
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDependencies(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(MapperProfile));
-builder.Services.AddLoggingConfiguration(builder.Configuration);
+builder.Services.AddLoggingConfiguration(config);
 
 
 var app = builder.Build();

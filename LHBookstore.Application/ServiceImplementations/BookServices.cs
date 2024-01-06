@@ -11,13 +11,13 @@ public class BookServices : IBookServices
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-    private readonly ILogger _logger;
+    //private readonly ILogger _logger;
 
-    public BookServices(IUnitOfWork unitOfWork, IMapper mapper, ILogger logger)
+    public BookServices(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
-        _logger = logger;
+        //_logger = logger;
     }
 
     public async Task<ApiResponse<List<BookResponseDto>>> GetAllBooksAsync(int page, int perPage)
@@ -39,7 +39,7 @@ public class BookServices : IBookServices
         catch (Exception ex)
         {
             // Log the exception for further investigation
-            _logger.LogError($"Error in GetAllBooksAsync: {ex.Message}");
+            //_logger.LogError($"Error in GetAllBooksAsync: {ex.Message}");
             return ApiResponse<List<BookResponseDto>>.Failed(false, "An error occurred while retrieving books", 500, new List<string> { ex.Message });
         }
     }
@@ -64,7 +64,7 @@ public class BookServices : IBookServices
         catch (Exception ex)
         {
             // Log the exception for further investigation
-            _logger.LogError($"Error in AddBookAsync: {ex.Message}");
+            //_logger.LogError($"Error in AddBookAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while adding the book", 500, new List<string> { ex.Message });
         }
     }
@@ -93,7 +93,7 @@ public class BookServices : IBookServices
         catch (Exception ex)
         {
             // Log the exception for further investigation
-            _logger.LogError($"Error in DeleteBookAsync: {ex.Message}");
+            //_logger.LogError($"Error in DeleteBookAsync: {ex.Message}");
             return ApiResponse<string>.Failed(false, "An error occurred while deleting the book", 500, new List<string> { ex.Message });
         }
     }
@@ -121,7 +121,7 @@ public class BookServices : IBookServices
         catch (Exception ex)
         {
             // Log the exception for further investigation
-            _logger.LogError($"Error in GetBookByIdAsync: {ex.Message}");
+           // _logger.LogError($"Error in GetBookByIdAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while retrieving the book", 500, new List<string> { ex.Message });
         }
     }
@@ -154,7 +154,7 @@ public class BookServices : IBookServices
         catch (Exception ex)
         {
             // Log the exception for further investigation
-            _logger.LogError($"Error in UpdateBookAsync: {ex.Message}");
+            //_logger.LogError($"Error in UpdateBookAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while updating the book", 500, new List<string> { ex.Message });
         }
     }
