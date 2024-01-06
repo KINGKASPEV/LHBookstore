@@ -69,7 +69,7 @@ namespace LHBookstore.Application.ServiceImplementations
         {
             try
             {
-                if (orderRequest == null || orderRequest.OrderItems == null || orderRequest.OrderItems.Count == 0)
+                if (orderRequest == null)
                 {
                     return ApiResponse<string>.Failed(false, "Order request is null or empty", 400, null);
                 }

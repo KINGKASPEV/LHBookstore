@@ -4,6 +4,6 @@ namespace LHBookstore.Application.DTOs.Order
 {
     public class OrderRequestDto
     {
-        public List<OrderItem> OrderItems { get; set; }
+        public int Quantity { get; set; }
     }
 }
