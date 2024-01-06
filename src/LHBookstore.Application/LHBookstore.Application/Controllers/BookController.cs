@@ -42,7 +42,7 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpGet("All-books")]
-        public async Task<IActionResult> GetAllBooks([FromQuery] int page = 1, [FromQuery] int perPage = 10)
+        public async Task<IActionResult> GetAllBooks([FromQuery] int page, [FromQuery] int perPage)
         {
             var response = await _bookServices.GetAllBooksAsync(page, perPage);
 

@@ -11,12 +11,6 @@ namespace LHBookstore.Application.Implementations.Repositories
 
         public async Task AddOrderAsync(Order order) => await AddAsync(order);
 
-        public async Task DeleteOrderAsync(Order order)
-        {
-            Delete(order);
-            await SaveChangesAsync();
-        }
-
         public async Task<List<Order>> FindOrdersAsync(Expression<Func<Order, bool>> condition) => await FindByConditionAsync(condition);
 
         public async Task<Order> GetOrderByIdAsync(string id) => await GetByIdAsync(id);
@@ -26,6 +20,11 @@ namespace LHBookstore.Application.Implementations.Repositories
         public async Task UpdateOrderAsync(Order order)
         {
             Update(order);
+            await SaveChangesAsync();
+        }
+        public async Task DeleteOrderAsync(Order order)
+        {
+            Delete(order);
             await SaveChangesAsync();
         }
     }

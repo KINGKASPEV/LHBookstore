@@ -1,5 +1,7 @@
 using LHBookstore.Application.ServiceExtensions;
+using LHBookstore.Configurations;
 using LHBookstore.Mapper;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDependencies(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(MapperProfile));
+builder.Services.AddLoggingConfiguration(builder.Configuration);
+
 
 var app = builder.Build();
 
