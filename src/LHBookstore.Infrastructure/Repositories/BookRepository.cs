@@ -12,7 +12,7 @@ namespace LHBookstore.Application.Implementations.Repositories
         public async Task AddBookAsync(Book book) => await AddAsync(book);
 
         public async Task<List<Book>> FindBookAsync(Expression<Func<Book, bool>> condition) => await FindByConditionAsync(condition);
-       
+
         public async Task<Book> GetBookByIdAsync(string id) => await GetByIdAsync(id);
 
         public async Task<List<Book>> GetAllBooksAsync() => await GetAllAsync();

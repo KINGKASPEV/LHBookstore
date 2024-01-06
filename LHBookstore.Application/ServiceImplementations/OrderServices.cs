@@ -5,6 +5,7 @@ using LHBookstore.Application.Interfaces.Services;
 using LHBookstore.Application.Utilities;
 using LHBookstore.Domain;
 using LHBookstore.Domain.Entities;
+using Microsoft.Extensions.Logging;
 
 namespace LHBookstore.Application.ServiceImplementations
 {
@@ -12,11 +13,13 @@ namespace LHBookstore.Application.ServiceImplementations
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public OrderService(IUnitOfWork unitOfWork, IMapper mapper)
+        public OrderService(IUnitOfWork unitOfWork, IMapper mapper, ILogger<OrderService> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public async Task<ApiResponse<PageResult<List<OrderResponseDto>>>> GetAllOrdersAsync(int page, int perPage)
@@ -47,7 +50,8 @@ namespace LHBookstore.Application.ServiceImplementations
             catch (Exception ex)
             {
                 // Log the exception for further investigation
-                Console.WriteLine($"Error retrieving orders: {ex.Message}");
+                _logger.LogError($"Error retrieving orders: {ex.Message}");
+                //Console.WriteLine($"Error retrieving orders: {ex.Message}");
 
                 return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "An error occurred while retrieving orders", 500, new List<string> { ex.Message });
             }
@@ -77,7 +81,8 @@ namespace LHBookstore.Application.ServiceImplementations
             catch (Exception ex)
             {
                 // Log the exception for further investigation
-                Console.WriteLine($"Error retrieving order: {ex.Message}");
+                _logger.LogError($"Error retrieving orders: {ex.Message}");
+                //Console.WriteLine($"Error retrieving order: {ex.Message}");
 
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while retrieving the order", 500, new List<string> { ex.Message });
             }
@@ -103,7 +108,8 @@ namespace LHBookstore.Application.ServiceImplementations
             catch (Exception ex)
             {
                 // Log the exception for further investigation
-                Console.WriteLine($"Error placing order: {ex.Message}");
+                _logger.LogError($"Error placing order: {ex.Message}");
+                //Console.WriteLine($"Error placing order: {ex.Message}");
 
                 return ApiResponse<string>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
             }
@@ -137,7 +143,8 @@ namespace LHBookstore.Application.ServiceImplementations
             catch (Exception ex)
             {
                 // Log the exception for further investigation
-                Console.WriteLine($"Error updating order: {ex.Message}");
+                _logger.LogError($"Error updating order: {ex.Message}");
+                //Console.WriteLine($"Error updating order: {ex.Message}");
 
                 return ApiResponse<string>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
             }
@@ -169,7 +176,8 @@ namespace LHBookstore.Application.ServiceImplementations
             catch (Exception ex)
             {
                 // Log the exception for further investigation
-                Console.WriteLine($"Error canceling order: {ex.Message}");
+                _logger.LogError($"Error canceling order: {ex.Message}");
+                //Console.WriteLine($"Error canceling order: {ex.Message}");
 
                 return ApiResponse<string>.Failed(false, "An error occurred while canceling the order", 500, new List<string> { ex.Message });
             }
