@@ -25,7 +25,7 @@ namespace LHBookstore.Application.Implementations.Repositories
 
         public async Task DeleteBookAsync(Book book)
         {
-            Delete(book);
+             Delete(book);
             await SaveChangesAsync();
         }
     }
