@@ -16,9 +16,9 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpPost("place-order")]
-        public async Task<IActionResult> PlaceOrderAsync(OrderRequestDto orderRequest)
+        public async Task<IActionResult> PlaceOrderAsync([FromBody] OrderRequestDto orderRequest, [FromQuery] string bookId)
         {
-            var response = await _orderService.PlaceOrderAsync(orderRequest);
+            var response = await _orderService.PlaceOrderAsync(orderRequest, bookId);
             if (response.Succeeded)
             {
                 return Ok(response);
@@ -38,7 +38,7 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
-        [HttpGet("all-order")]
+        [HttpGet("all-orders")]
         public async Task<IActionResult> GetAllOrdersAsync([FromQuery] int page, [FromQuery] int perPage)
         {
             var response = await _orderService.GetAllOrdersAsync(page, perPage);
@@ -55,11 +55,10 @@ namespace LHBookstore.Application.Controllers
             var response = await _orderService.GetOrderByIdAsync(id);
             if (response.Succeeded)
             {
-                return Ok(response);
+                return Ok(response.Data);
             }
             return BadRequest(response);
         }
-
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> CancelOrderAsync(string id)

@@ -49,14 +49,10 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                // Log the exception for further investigation
                 _logger.LogError($"Error retrieving orders: {ex.Message}");
-                //Console.WriteLine($"Error retrieving orders: {ex.Message}");
-
                 return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "An error occurred while retrieving orders", 500, new List<string> { ex.Message });
             }
         }
-
 
         public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string id)
         {
@@ -80,26 +76,38 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                // Log the exception for further investigation
                 _logger.LogError($"Error retrieving orders: {ex.Message}");
-                //Console.WriteLine($"Error retrieving order: {ex.Message}");
-
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while retrieving the order", 500, new List<string> { ex.Message });
             }
         }
 
-        public async Task<ApiResponse<string>> PlaceOrderAsync(OrderRequestDto orderRequest)
+        public async Task<ApiResponse<string>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId)
         {
             try
             {
-                if (orderRequest == null)
+                if (orderRequest == null || string.IsNullOrEmpty(bookId))
                 {
-                    return ApiResponse<string>.Failed(false, "Order request is null or empty", 400, null);
+                    return ApiResponse<string>.Failed(false, "Order request or book ID is null or empty", 400, null);
                 }
 
-                // Additional logic related to placing an order
+                if (orderRequest.Quantity < 1)
+                {
+                    return ApiResponse<string>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
+                }
+
+                // Retrieve book details based on bookId (you may need to implement this method)
+                var book = await _unitOfWork.BookRepository.GetBookByIdAsync(bookId);
+
+                if (book == null)
+                {
+                    return ApiResponse<string>.Failed(false, $"Book with ID {bookId} not found", 404, null);
+                }
 
                 var order = _mapper.Map<Order>(orderRequest);
+
+                // Set the Book property of the order to the retrieved book
+                order.Book = book;
+
                 await _unitOfWork.OrderRepository.AddOrderAsync(order);
                 await _unitOfWork.SaveChangesAsync();
 
@@ -107,13 +115,32 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                // Log the exception for further investigation
                 _logger.LogError($"Error placing order: {ex.Message}");
-                //Console.WriteLine($"Error placing order: {ex.Message}");
-
                 return ApiResponse<string>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
             }
         }
+
+        //public async Task<ApiResponse<string>> PlaceOrderAsync(OrderRequestDto orderRequest)
+        //{
+        //    try
+        //    {
+        //        if (orderRequest == null)
+        //        {
+        //            return ApiResponse<string>.Failed(false, "Order request is null or empty", 400, null);
+        //        }
+
+        //        var order = _mapper.Map<Order>(orderRequest);
+        //        await _unitOfWork.OrderRepository.AddOrderAsync(order);
+        //        await _unitOfWork.SaveChangesAsync();
+
+        //        return ApiResponse<string>.Success(order.Id, "Order placed successfully", 201);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError($"Error placing order: {ex.Message}");
+        //        return ApiResponse<string>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
+        //    }
+        //}
 
         public async Task<ApiResponse<string>> UpdateOrderAsync(string id, OrderRequestDto orderRequest)
         {
@@ -130,9 +157,6 @@ namespace LHBookstore.Application.ServiceImplementations
                 {
                     return ApiResponse<string>.Failed(false, $"Order with id {id} not found", 404, null);
                 }
-
-                // Additional logic related to updating an order
-
                 _mapper.Map(orderRequest, existingOrder);
 
                 _unitOfWork.OrderRepository.UpdateOrderAsync(existingOrder);
@@ -142,10 +166,7 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                // Log the exception for further investigation
                 _logger.LogError($"Error updating order: {ex.Message}");
-                //Console.WriteLine($"Error updating order: {ex.Message}");
-
                 return ApiResponse<string>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
             }
         }
@@ -165,9 +186,6 @@ namespace LHBookstore.Application.ServiceImplementations
                 {
                     return ApiResponse<string>.Failed(false, $"Order with id {id} not found", 404, null);
                 }
-
-                // Additional logic related to canceling an order
-
                 _unitOfWork.OrderRepository.DeleteOrderAsync(order);
                 await _unitOfWork.SaveChangesAsync();
 
@@ -175,10 +193,7 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                // Log the exception for further investigation
                 _logger.LogError($"Error canceling order: {ex.Message}");
-                //Console.WriteLine($"Error canceling order: {ex.Message}");
-
                 return ApiResponse<string>.Failed(false, "An error occurred while canceling the order", 500, new List<string> { ex.Message });
             }
         }

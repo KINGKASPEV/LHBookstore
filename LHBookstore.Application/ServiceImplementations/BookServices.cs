@@ -20,30 +20,6 @@ public class BookServices : IBookServices
         _logger = logger;
     }
 
-    public async Task<ApiResponse<List<BookResponseDto>>> GetAllBooksAsync(int page, int perPage)
-    {
-        try
-        {
-            if (page <= 0 || perPage <= 0)
-            {
-                return ApiResponse<List<BookResponseDto>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
-            }
-
-            var allBooks = await _unitOfWork.BookRepository.GetAllBooksAsync();
-            var paginatedBooks = await Pagination<Book>.GetPager(allBooks, perPage, page, b => b.Title, b => b.Id);
-
-            var bookDtos = _mapper.Map<List<BookResponseDto>>(paginatedBooks.Data);
-
-            return ApiResponse<List<BookResponseDto>>.Success(bookDtos, "Books retrieved successfully", 200);
-        }
-        catch (Exception ex)
-        {
-            // Log the exception for further investigation
-            _logger.LogError($"Error in GetAllBooksAsync: {ex.Message}");
-            return ApiResponse<List<BookResponseDto>>.Failed(false, "An error occurred while retrieving books", 500, new List<string> { ex.Message });
-        }
-    }
-
     public async Task<ApiResponse<BookResponseDto>> AddBookAsync(BookRequestDto book)
     {
         try
@@ -63,9 +39,31 @@ public class BookServices : IBookServices
         }
         catch (Exception ex)
         {
-            // Log the exception for further investigation
             _logger.LogError($"Error in AddBookAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while adding the book", 500, new List<string> { ex.Message });
+        }
+    }
+
+    public async Task<ApiResponse<List<BookResponseDto>>> GetAllBooksAsync(int page, int perPage)
+    {
+        try
+        {
+            if (page <= 0 || perPage <= 0)
+            {
+                return ApiResponse<List<BookResponseDto>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
+            }
+
+            var allBooks = await _unitOfWork.BookRepository.GetAllBooksAsync();
+            var paginatedBooks = await Pagination<Book>.GetPager(allBooks, perPage, page, b => b.Title, b => b.Id);
+
+            var bookDtos = _mapper.Map<List<BookResponseDto>>(paginatedBooks.Data);
+
+            return ApiResponse<List<BookResponseDto>>.Success(bookDtos, "Books retrieved successfully", 200);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error in GetAllBooksAsync: {ex.Message}");
+            return ApiResponse<List<BookResponseDto>>.Failed(false, "An error occurred while retrieving books", 500, new List<string> { ex.Message });
         }
     }
 
@@ -92,7 +90,6 @@ public class BookServices : IBookServices
         }
         catch (Exception ex)
         {
-            // Log the exception for further investigation
             _logger.LogError($"Error in DeleteBookAsync: {ex.Message}");
             return ApiResponse<string>.Failed(false, "An error occurred while deleting the book", 500, new List<string> { ex.Message });
         }
@@ -120,7 +117,6 @@ public class BookServices : IBookServices
         }
         catch (Exception ex)
         {
-            // Log the exception for further investigation
             _logger.LogError($"Error in GetBookByIdAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while retrieving the book", 500, new List<string> { ex.Message });
         }
@@ -153,7 +149,6 @@ public class BookServices : IBookServices
         }
         catch (Exception ex)
         {
-            // Log the exception for further investigation
             _logger.LogError($"Error in UpdateBookAsync: {ex.Message}");
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while updating the book", 500, new List<string> { ex.Message });
         }

@@ -1,5 +1,4 @@
 ﻿using LHBookstore.Domain.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LHBookstore.Domain.Entities
 {
@@ -7,5 +6,6 @@ namespace LHBookstore.Domain.Entities
     {
         public List<OrderItem> OrderItems { get; set; }
         public OrderStatus OrderStatus { get; set; }
+        public Book Book { get; set; }
     }
 }
