@@ -13,6 +13,14 @@ namespace LHBookstore.Mapper
             CreateMap<Book, BookResponseDto>();
             CreateMap<OrderRequestDto, Order>();
             CreateMap<Order, OrderResponseDto>();
+            //CreateMap<OrderRequestDto, Order>()
+            //    .ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => new List<OrderItem>
+            //    {
+            //        new OrderItem
+            //        {
+            //            Quantity = src.Quantity
+            //        }
+            //    }));
         }
     }
 }

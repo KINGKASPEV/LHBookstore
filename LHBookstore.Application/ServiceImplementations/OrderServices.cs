@@ -54,20 +54,20 @@ namespace LHBookstore.Application.ServiceImplementations
             }
         }
 
-        public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string id)
+        public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string orderId)
         {
             try
             {
-                if (string.IsNullOrEmpty(id))
+                if (string.IsNullOrEmpty(orderId))
                 {
                     return ApiResponse<OrderResponseDto>.Failed(false, "Order id cannot be null or empty", 400, null);
                 }
 
-                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(id);
+                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(orderId);
 
                 if (order == null)
                 {
-                    return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {id} not found", 404, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {orderId} not found", 404, null);
                 }
 
                 var orderDto = _mapper.Map<OrderResponseDto>(order);
@@ -81,26 +81,26 @@ namespace LHBookstore.Application.ServiceImplementations
             }
         }
 
-        public async Task<ApiResponse<string>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId)
+        public async Task<ApiResponse<OrderResponseDto>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId)
         {
             try
             {
                 if (orderRequest == null || string.IsNullOrEmpty(bookId))
                 {
-                    return ApiResponse<string>.Failed(false, "Order request or book ID is null or empty", 400, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Order request or book ID is null or empty", 400, null);
                 }
 
                 if (orderRequest.Quantity < 1)
                 {
-                    return ApiResponse<string>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
                 }
 
-                // Retrieve book details based on bookId (you may need to implement this method)
+                // Retrieve book details based on bookId 
                 var book = await _unitOfWork.BookRepository.GetBookByIdAsync(bookId);
 
                 if (book == null)
                 {
-                    return ApiResponse<string>.Failed(false, $"Book with ID {bookId} not found", 404, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Book with ID {bookId} not found", 404, null);
                 }
 
                 var order = _mapper.Map<Order>(orderRequest);
@@ -111,85 +111,74 @@ namespace LHBookstore.Application.ServiceImplementations
                 await _unitOfWork.OrderRepository.AddOrderAsync(order);
                 await _unitOfWork.SaveChangesAsync();
 
-                return ApiResponse<string>.Success(order.Id, "Order placed successfully", 201);
+                var orderResponse = _mapper.Map<OrderResponseDto>(order);
+
+                return ApiResponse<OrderResponseDto>.Success(orderResponse, "Order placed successfully", 201);
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error placing order: {ex.Message}");
-                return ApiResponse<string>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
+                return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
             }
         }
 
-        //public async Task<ApiResponse<string>> PlaceOrderAsync(OrderRequestDto orderRequest)
-        //{
-        //    try
-        //    {
-        //        if (orderRequest == null)
-        //        {
-        //            return ApiResponse<string>.Failed(false, "Order request is null or empty", 400, null);
-        //        }
-
-        //        var order = _mapper.Map<Order>(orderRequest);
-        //        await _unitOfWork.OrderRepository.AddOrderAsync(order);
-        //        await _unitOfWork.SaveChangesAsync();
-
-        //        return ApiResponse<string>.Success(order.Id, "Order placed successfully", 201);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError($"Error placing order: {ex.Message}");
-        //        return ApiResponse<string>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
-        //    }
-        //}
-
-        public async Task<ApiResponse<string>> UpdateOrderAsync(string id, OrderRequestDto orderRequest)
+        public async Task<ApiResponse<OrderResponseDto>> UpdateOrderAsync(string id, OrderRequestDto orderRequest)
         {
             try
             {
                 if (string.IsNullOrEmpty(id))
                 {
-                    return ApiResponse<string>.Failed(false, "Order id cannot be null or empty", 400, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Order id cannot be null or empty", 400, null);
+                }
+
+                if (orderRequest.Quantity < 1)
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Quantity must be greater than 0", 400, null);
                 }
 
                 var existingOrder = await _unitOfWork.OrderRepository.GetOrderByIdAsync(id);
 
                 if (existingOrder == null)
                 {
-                    return ApiResponse<string>.Failed(false, $"Order with id {id} not found", 404, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {id} not found", 404, null);
                 }
+
                 _mapper.Map(orderRequest, existingOrder);
 
-                _unitOfWork.OrderRepository.UpdateOrderAsync(existingOrder);
+                await _unitOfWork.OrderRepository.UpdateOrderAsync(existingOrder);
                 await _unitOfWork.SaveChangesAsync();
 
-                return ApiResponse<string>.Success(existingOrder.Id, "Order updated successfully", 200);
+                var updatedOrderResponse = _mapper.Map<OrderResponseDto>(existingOrder);
+
+                return ApiResponse<OrderResponseDto>.Success(updatedOrderResponse, "Order updated successfully", 200);
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error updating order: {ex.Message}");
-                return ApiResponse<string>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
+                return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
             }
         }
 
-        public async Task<ApiResponse<string>> CancelOrderAsync(string id)
+
+        public async Task<ApiResponse<string>> CancelOrderAsync(string orderId)
         {
             try
             {
-                if (string.IsNullOrEmpty(id))
+                if (string.IsNullOrEmpty(orderId))
                 {
                     return ApiResponse<string>.Failed(false, "Order id cannot be null or empty", 400, null);
                 }
 
-                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(id);
+                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(orderId);
 
                 if (order == null)
                 {
-                    return ApiResponse<string>.Failed(false, $"Order with id {id} not found", 404, null);
+                    return ApiResponse<string>.Failed(false, $"Order with id {orderId} not found", 404, null);
                 }
-                _unitOfWork.OrderRepository.DeleteOrderAsync(order);
+                await _unitOfWork.OrderRepository.DeleteOrderAsync(order);
                 await _unitOfWork.SaveChangesAsync();
 
-                return ApiResponse<string>.Success($"Order with id {id} canceled successfully", "Order canceled successfully", 200);
+                return ApiResponse<string>.Success($"Order with id {orderId} canceled successfully", "Order canceled successfully", 200);
             }
             catch (Exception ex)
             {

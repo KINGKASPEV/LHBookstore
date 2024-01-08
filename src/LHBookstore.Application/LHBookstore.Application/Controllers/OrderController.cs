@@ -28,9 +28,9 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpPut("edit/{id}")]
-        public async Task<IActionResult> UpdateOrderAsync(string id, OrderRequestDto orderRequest)
+        public async Task<IActionResult> UpdateOrderAsync(string orderId, OrderRequestDto orderRequest)
         {
-            var response = await _orderService.UpdateOrderAsync(id, orderRequest);
+            var response = await _orderService.UpdateOrderAsync(orderId, orderRequest);
             if (response.Succeeded)
             {
                 return Ok(response);
