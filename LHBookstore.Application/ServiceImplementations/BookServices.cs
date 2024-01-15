@@ -43,6 +43,7 @@ public class BookServices : IBookServices
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while adding the book", 500, new List<string> { ex.Message });
         }
     }
+
     public async Task<ApiResponse<PageResult<List<BookResponseDto>>>> GetAllBooksAsync(int page, int perPage)
     {
         try
