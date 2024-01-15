@@ -44,6 +44,42 @@ public class BookServices : IBookServices
         }
     }
 
+    public async Task<ApiResponse<BookResponseDto>> RentBookAsync(string Id)
+    {
+        try
+        {
+            var book = await _unitOfWork.BookRepository.GetBookByIdAsync(Id);
+
+            if (book == null)
+            {
+                return ApiResponse<BookResponseDto>.Failed(false, "Book should not be null", 400, null);
+            }
+
+            if (!book.IsAvailable)
+            {
+                return ApiResponse<BookResponseDto>.Failed(false, "Book not currently available, check back later", 400, null);
+            }
+
+            book.IsAvailable = true;
+
+            await _unitOfWork.BookRepository.UpdateBookAsync(book);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            var rentedBookDto = _mapper.Map<BookResponseDto>(book);
+
+            return ApiResponse<BookResponseDto>.Success(rentedBookDto, "Book rented successfully", 200);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error Renting out books: {ex.Message}");
+            return ApiResponse<BookResponseDto>.Failed(false, "error occured while renting out this book", 500, new List<string> { ex.Message});
+        }
+
+    }
+
+
+
     public async Task<ApiResponse<PageResult<List<BookResponseDto>>>> GetAllBooksAsync(int page, int perPage)
     {
         try

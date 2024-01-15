@@ -15,5 +15,6 @@ namespace LHBookstore.Application.DTOs.Book
         [MaxLength(500, ErrorMessage = "Description cannot exceed 500 characters")]
         public string Description { get; set; }
         public int QuantityAvailable { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

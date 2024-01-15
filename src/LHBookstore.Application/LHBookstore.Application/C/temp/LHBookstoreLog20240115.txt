@@ -795,3 +795,252 @@ FROM "Orders" AS "o"
 2024-01-15 08:21:44.832 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 37.7646ms
 2024-01-15 08:21:44.834 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
 2024-01-15 08:21:44.837 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 84.7681ms
+2024-01-15 09:31:35.570 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 09:31:35.704 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 09:31:35.724 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 09:31:35.739 +00:00 [INF] Hosting environment: Development
+2024-01-15 09:31:35.758 +00:00 [INF] Content root path: /app
+2024-01-15 09:31:42.406 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 09:31:43.467 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 1072.9605ms
+2024-01-15 09:31:47.394 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 09:31:48.622 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1228.5405ms
+2024-01-15 09:33:05.477 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Book/add application/json 347
+2024-01-15 09:33:05.553 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore)'
+2024-01-15 09:33:05.689 +00:00 [INF] Route matched with {action = "AddBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddBookAsync(LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 09:33:08.448 +00:00 [INF] Executed DbCommand (111ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 10), @p2='?' (DbType = DateTime), @p3='?' (Size = 247), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (Size = 9), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Books" ("Id", "Author", "CreatedAt", "Description", "IsDeleted", "QuantityAvailable", "Title", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-01-15 09:33:08.539 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:33:08.593 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore) in 2891.1365ms
+2024-01-15 09:33:08.596 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore)'
+2024-01-15 09:33:08.617 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Book/add application/json 347 - 200 - application/json;+charset=utf-8 3140.8335ms
+2024-01-15 09:34:11.533 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/edit/0ff4efdc-6103-4a46-ba73-9e8f8b47fa47 application/json 347
+2024-01-15 09:34:11.575 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBookAsync (LHBookstore)'
+2024-01-15 09:34:11.636 +00:00 [INF] Route matched with {action = "UpdateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBookAsync(System.String, LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 09:34:12.547 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:34:12.624 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 10), @p1='?' (DbType = DateTime), @p2='?' (Size = 247), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 9), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 09:34:12.650 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:34:12.653 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.UpdateBookAsync (LHBookstore) in 1008.1629ms
+2024-01-15 09:34:12.663 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBookAsync (LHBookstore)'
+2024-01-15 09:34:12.666 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/edit/0ff4efdc-6103-4a46-ba73-9e8f8b47fa47 application/json 347 - 200 - application/json;+charset=utf-8 1133.8521ms
+2024-01-15 09:34:32.868 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/0ff4efdc-6103-4a46-ba73-9e8f8b47fa47 - -
+2024-01-15 09:34:32.953 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetBookByIdAsync (LHBookstore)'
+2024-01-15 09:34:32.986 +00:00 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookByIdAsync(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 09:34:33.274 +00:00 [INF] Executed DbCommand (173ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:34:33.310 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:34:33.326 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetBookByIdAsync (LHBookstore) in 319.5852ms
+2024-01-15 09:34:33.362 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetBookByIdAsync (LHBookstore)'
+2024-01-15 09:34:33.392 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/0ff4efdc-6103-4a46-ba73-9e8f8b47fa47 - - - 200 - application/json;+charset=utf-8 523.3916ms
+2024-01-15 09:34:52.843 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=4 - -
+2024-01-15 09:34:52.850 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 09:34:52.880 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooksAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 09:34:52.950 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 09:34:53.012 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:34:53.029 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore) in 148.51ms
+2024-01-15 09:34:53.032 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 09:34:53.035 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=4 - - - 200 - application/json;+charset=utf-8 191.9656ms
+2024-01-15 09:36:01.836 +00:00 [INF] Request starting HTTP/2 DELETE https://localhost:32768/api/Book/delete/d2bb94a8-718d-4978-be45-7135f9ccd0ff - -
+2024-01-15 09:36:01.846 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.DeleteBookAsync (LHBookstore)'
+2024-01-15 09:36:01.857 +00:00 [INF] Route matched with {action = "DeleteBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBookAsync(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 09:36:01.873 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:36:01.924 +00:00 [ERR] Failed executing DbCommand (17ms) [Parameters=[@p0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Books"
+WHERE "Id" = @p0
+RETURNING 1;
+2024-01-15 09:36:02.012 +00:00 [ERR] An exception occurred in the database while saving changes for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'FOREIGN KEY constraint failed'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'FOREIGN KEY constraint failed'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-01-15 09:36:02.251 +00:00 [ERR] Error in DeleteBookAsync: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-15 09:36:02.254 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 09:36:02.262 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.DeleteBookAsync (LHBookstore) in 400.8997ms
+2024-01-15 09:36:02.264 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.DeleteBookAsync (LHBookstore)'
+2024-01-15 09:36:02.268 +00:00 [INF] Request finished HTTP/2 DELETE https://localhost:32768/api/Book/delete/d2bb94a8-718d-4978-be45-7135f9ccd0ff - - - 400 - application/json;+charset=utf-8 456.8254ms
+2024-01-15 09:36:40.421 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 19
+2024-01-15 09:36:40.499 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 09:36:40.536 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:36:40.611 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:36:40.678 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 102.2928ms
+2024-01-15 09:36:40.730 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 09:36:40.774 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 19 - 400 - application/json;+charset=utf-8 353.0169ms
+2024-01-15 09:36:53.853 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 20
+2024-01-15 09:36:53.986 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 09:36:54.018 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:36:54.139 +00:00 [INF] Executed DbCommand (41ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:36:54.208 +00:00 [INF] Executed DbCommand (17ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 18), @p1='?' (DbType = DateTime), @p2='?' (Size = 165), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 18), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 09:36:55.436 +00:00 [INF] Executed DbCommand (128ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("Id", "CreatedAt", "IsDeleted", "OrderStatus", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-01-15 09:36:55.488 +00:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (DbType = DateTime), @p3='?' (DbType = Boolean), @p4='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("Id", "BookId", "CreatedAt", "IsDeleted", "OrderId", "Quantity", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-01-15 09:36:55.647 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:36:55.743 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 1676.8382ms
+2024-01-15 09:36:55.768 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 09:36:55.785 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 20 - 200 - application/json;+charset=utf-8 1931.5055ms
+2024-01-15 09:37:21.548 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Order/edit/{id} application/json 20
+2024-01-15 09:37:21.603 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore)'
+2024-01-15 09:37:21.630 +00:00 [INF] Route matched with {action = "UpdateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOrderAsync(System.String, LHBookstore.Application.DTOs.Order.OrderRequestDto) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:37:21.832 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:37:21.839 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:37:21.843 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore) in 183.6952ms
+2024-01-15 09:37:21.863 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore)'
+2024-01-15 09:37:21.875 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Order/edit/{id} application/json 20 - 400 - application/json;+charset=utf-8 326.9649ms
+2024-01-15 09:37:52.267 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Order/edit/{id} application/json 20
+2024-01-15 09:37:52.311 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore)'
+2024-01-15 09:37:52.339 +00:00 [INF] Route matched with {action = "UpdateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateOrderAsync(System.String, LHBookstore.Application.DTOs.Order.OrderRequestDto) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:37:52.354 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2024-01-15 09:37:52.363 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:37:52.368 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore) in 27.4609ms
+2024-01-15 09:37:52.381 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.UpdateOrderAsync (LHBookstore)'
+2024-01-15 09:37:52.395 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Order/edit/{id} application/json 20 - 400 - application/json;+charset=utf-8 127.7993ms
+2024-01-15 09:38:07.111 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 09:38:07.134 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 09:38:07.149 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:38:07.184 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 09:38:07.207 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 09:38:07.216 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 65.5309ms
+2024-01-15 09:38:07.220 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 09:38:07.224 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 134.3762ms
+2024-01-15 09:38:22.871 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - -
+2024-01-15 09:38:22.872 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 09:38:22.894 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 09:38:22.939 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 09:38:22.947 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 09:38:22.949 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 54.2329ms
+2024-01-15 09:38:22.951 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 09:38:22.955 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 105.1299ms
+2024-01-15 10:42:20.171 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 10:42:20.307 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 10:42:20.332 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 10:42:20.338 +00:00 [INF] Hosting environment: Development
+2024-01-15 10:42:20.343 +00:00 [INF] Content root path: /app
+2024-01-15 10:42:23.686 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 10:42:24.733 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 1023.1281ms
+2024-01-15 10:42:27.524 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 10:42:28.983 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1459.0420ms
+2024-01-15 10:42:44.557 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 10:42:44.607 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 10:42:44.720 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooksAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 10:42:48.304 +00:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsAvailable", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 10:42:48.618 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 10:42:48.695 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore) in 3951.5217ms
+2024-01-15 10:42:48.698 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 10:42:48.719 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 4163.0291ms
+2024-01-15 10:43:11.169 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0
+2024-01-15 10:43:11.178 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 10:43:11.197 +00:00 [INF] Route matched with {action = "RentBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RentBook(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 10:43:11.629 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsAvailable", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 10:43:11.641 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 10:43:11.648 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore) in 450.3989ms
+2024-01-15 10:43:11.652 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 10:43:11.698 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0 - 400 - application/json;+charset=utf-8 508.5266ms
+2024-01-15 11:05:21.324 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0
+2024-01-15 11:05:21.333 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 11:05:21.337 +00:00 [INF] Route matched with {action = "RentBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RentBook(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 11:05:21.477 +00:00 [INF] Executed DbCommand (63ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsAvailable", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 11:05:21.483 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 11:05:21.488 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore) in 149.0501ms
+2024-01-15 11:05:21.491 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 11:05:21.498 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0 - 400 - application/json;+charset=utf-8 197.1940ms
+2024-01-15 11:07:25.413 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 11:07:25.522 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 11:07:25.539 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 11:07:25.543 +00:00 [INF] Hosting environment: Development
+2024-01-15 11:07:25.548 +00:00 [INF] Content root path: /app
+2024-01-15 11:07:29.105 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 11:07:29.746 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 650.0563ms
+2024-01-15 11:07:38.354 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 11:07:38.631 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 277.0076ms
+2024-01-15 11:09:31.341 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0
+2024-01-15 11:09:31.384 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 11:09:31.454 +00:00 [INF] Route matched with {action = "RentBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RentBook(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 11:09:34.753 +00:00 [INF] Executed DbCommand (96ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsAvailable", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 11:09:34.948 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 11:09:34.977 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore) in 3512.0723ms
+2024-01-15 11:09:34.980 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.RentBook (LHBookstore)'
+2024-01-15 11:09:34.998 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/Rent/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be - 0 - 400 - application/json;+charset=utf-8 3657.4578ms

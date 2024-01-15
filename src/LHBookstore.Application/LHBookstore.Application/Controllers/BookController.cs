@@ -28,6 +28,19 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
+        [HttpPut("Rent/{id}")]
+        public async Task<IActionResult> RentBook(string id)
+        {
+            var response = await _bookServices.RentBookAsync(id);
+
+            if (response.Succeeded)
+            {
+                return Ok(response.Data);
+            }
+
+            return BadRequest(response);
+        }
+
         [HttpPut("edit/{id}")]
         public async Task<IActionResult> UpdateBookAsync(string id, [FromBody] BookRequestDto book)
         {

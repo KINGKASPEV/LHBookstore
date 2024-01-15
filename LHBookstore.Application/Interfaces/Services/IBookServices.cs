@@ -11,5 +11,6 @@ namespace LHBookstore.Application.Interfaces.Services
         Task<ApiResponse<BookResponseDto>> AddBookAsync(BookRequestDto book);
         Task<ApiResponse<BookResponseDto>> UpdateBookAsync(string id, BookRequestDto book);
         Task<ApiResponse<string>> DeleteBookAsync(string id);
+        Task<ApiResponse<BookResponseDto>> RentBookAsync(string Id);
     }
 }
