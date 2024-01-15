@@ -3,8 +3,8 @@ using LHBookstore.Application.DTOs.Book;
 using LHBookstore.Application.Interfaces.Repositories;
 using LHBookstore.Application.Interfaces.Services;
 using LHBookstore.Application.Utilities;
-using LHBookstore.Domain.Entities;
 using LHBookstore.Domain;
+using LHBookstore.Domain.Entities;
 using Microsoft.Extensions.Logging;
 
 public class BookServices : IBookServices
@@ -43,14 +43,13 @@ public class BookServices : IBookServices
             return ApiResponse<BookResponseDto>.Failed(false, "An error occurred while adding the book", 500, new List<string> { ex.Message });
         }
     }
-
-    public async Task<ApiResponse<List<BookResponseDto>>> GetAllBooksAsync(int page, int perPage)
+    public async Task<ApiResponse<PageResult<List<BookResponseDto>>>> GetAllBooksAsync(int page, int perPage)
     {
         try
         {
             if (page <= 0 || perPage <= 0)
             {
-                return ApiResponse<List<BookResponseDto>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
+                return ApiResponse<PageResult<List<BookResponseDto>>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
             }
 
             var allBooks = await _unitOfWork.BookRepository.GetAllBooksAsync();
@@ -58,12 +57,21 @@ public class BookServices : IBookServices
 
             var bookDtos = _mapper.Map<List<BookResponseDto>>(paginatedBooks.Data);
 
-            return ApiResponse<List<BookResponseDto>>.Success(bookDtos, "Books retrieved successfully", 200);
+            var pageResult = new PageResult<List<BookResponseDto>>
+            {
+                Data = bookDtos,
+                TotalPageCount = paginatedBooks.TotalPageCount,
+                CurrentPage = paginatedBooks.CurrentPage,
+                PerPage = paginatedBooks.PerPage,
+                TotalCount = paginatedBooks.TotalCount
+            };
+
+            return ApiResponse<PageResult<List<BookResponseDto>>>.Success(pageResult, "Orders retrieved successfully", 200);
         }
         catch (Exception ex)
         {
             _logger.LogError($"Error in GetAllBooksAsync: {ex.Message}");
-            return ApiResponse<List<BookResponseDto>>.Failed(false, "An error occurred while retrieving books", 500, new List<string> { ex.Message });
+            return ApiResponse<PageResult<List<BookResponseDto>>>.Failed(false, "An error occurred while retrieving books", 500, new List<string> { ex.Message });
         }
     }
 

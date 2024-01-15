@@ -22,15 +22,14 @@ namespace LHBookstore.Application.Controllers
             if (response.Succeeded)
             {
                 return Ok(response);
-                //return CreatedAtAction(nameof(GetOrderByIdAsync), new { id = response.Data }, response);
             }
             return BadRequest(response);
         }
 
         [HttpPut("edit/{id}")]
-        public async Task<IActionResult> UpdateOrderAsync(string orderId, OrderRequestDto orderRequest)
+        public async Task<IActionResult> UpdateOrderAsync(string Id, OrderRequestDto orderRequest)
         {
-            var response = await _orderService.UpdateOrderAsync(orderId, orderRequest);
+            var response = await _orderService.UpdateOrderAsync(Id, orderRequest);
             if (response.Succeeded)
             {
                 return Ok(response);

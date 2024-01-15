@@ -1,0 +1,664 @@
+2024-01-15 04:19:21.832 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 04:19:21.941 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 04:19:21.959 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 04:19:21.964 +00:00 [INF] Hosting environment: Development
+2024-01-15 04:19:21.971 +00:00 [INF] Content root path: /app
+2024-01-15 04:19:26.272 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger - -
+2024-01-15 04:19:26.634 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger - - - 301 0 - 356.7573ms
+2024-01-15 04:19:26.710 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 04:19:27.406 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 695.7425ms
+2024-01-15 04:19:27.464 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/swagger-ui.css - -
+2024-01-15 04:19:27.467 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/swagger-ui-bundle.js - -
+2024-01-15 04:19:27.472 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/swagger-ui-standalone-preset.js - -
+2024-01-15 04:19:27.773 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-01-15 04:19:27.774 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/swagger-ui.css - - - 200 144929 text/css 310.1460ms
+2024-01-15 04:19:27.892 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-01-15 04:19:27.895 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 423.2449ms
+2024-01-15 04:19:28.676 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-01-15 04:19:28.703 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 1236.1027ms
+2024-01-15 04:19:29.685 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/favicon-32x32.png - -
+2024-01-15 04:19:29.698 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-01-15 04:19:29.722 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/favicon-32x32.png - - - 200 628 image/png 36.4240ms
+2024-01-15 04:19:30.229 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 04:19:31.102 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 874.2765ms
+2024-01-15 04:19:40.285 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32769/ - -
+2024-01-15 04:19:40.318 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32769/ - - - 307 0 - 32.3407ms
+2024-01-15 04:19:40.351 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:40.379 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 29.0704ms
+2024-01-15 04:19:42.011 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:42.013 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 1.8914ms
+2024-01-15 04:19:44.467 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:44.470 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 4.0256ms
+2024-01-15 04:19:47.752 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32769/ - -
+2024-01-15 04:19:47.764 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32769/ - - - 307 0 - 12.7761ms
+2024-01-15 04:19:47.808 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:47.831 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 22.8942ms
+2024-01-15 04:19:49.371 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:49.376 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 7.2671ms
+2024-01-15 04:19:50.199 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:19:50.200 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 2.4591ms
+2024-01-15 04:20:17.581 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32769/ - -
+2024-01-15 04:20:17.586 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32769/ - - - 307 0 - 7.3614ms
+2024-01-15 04:20:17.631 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 04:20:17.634 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 3.4025ms
+2024-01-15 04:21:19.095 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:21:19.219 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:21:19.405 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:21:23.532 +00:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:21:23.817 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:21:23.872 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 4434.2855ms
+2024-01-15 04:21:23.879 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:21:23.903 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 4808.6239ms
+2024-01-15 04:22:52.282 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/edit/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 282
+2024-01-15 04:22:52.292 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore)'
+2024-01-15 04:22:52.314 +00:00 [INF] Route matched with {action = "UpdateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(System.String, LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:22:52.768 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:22:52.963 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 18), @p1='?' (DbType = DateTime), @p2='?' (Size = 165), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 18), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 04:22:53.006 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:22:53.011 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore) in 694.8978ms
+2024-01-15 04:22:53.012 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore)'
+2024-01-15 04:22:53.015 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/edit/1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 282 - 200 - application/json;+charset=utf-8 734.7760ms
+2024-01-15 04:23:06.480 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:23:06.486 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:23:06.488 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:23:06.544 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:23:06.556 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:23:06.557 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 67.5636ms
+2024-01-15 04:23:06.559 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:23:06.560 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 80.8472ms
+2024-01-15 04:26:42.057 +00:00 [INF] Request starting HTTP/2 PUT https://localhost:32768/api/Book/edit/f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 512
+2024-01-15 04:26:42.066 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore)'
+2024-01-15 04:26:42.071 +00:00 [INF] Route matched with {action = "UpdateBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(System.String, LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:26:42.109 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:26:42.126 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 12), @p1='?' (DbType = DateTime), @p2='?' (Size = 401), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 13), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 04:26:42.143 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:26:42.146 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore) in 71.901ms
+2024-01-15 04:26:42.148 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.UpdateBook (LHBookstore)'
+2024-01-15 04:26:42.156 +00:00 [INF] Request finished HTTP/2 PUT https://localhost:32768/api/Book/edit/f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 512 - 200 - application/json;+charset=utf-8 178.8662ms
+2024-01-15 04:26:50.195 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:26:50.207 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:26:50.210 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:26:50.228 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:26:50.235 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:26:50.238 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 21.6748ms
+2024-01-15 04:26:50.241 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:26:50.243 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 48.1075ms
+2024-01-15 04:27:31.442 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/f61ac42c-0a4f-47d4-897d-92c4b358c7a7 - -
+2024-01-15 04:27:31.489 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetBookById (LHBookstore)'
+2024-01-15 04:27:31.511 +00:00 [INF] Route matched with {action = "GetBookById", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookById(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:27:31.543 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:27:31.558 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:27:31.570 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetBookById (LHBookstore) in 56.608ms
+2024-01-15 04:27:31.573 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetBookById (LHBookstore)'
+2024-01-15 04:27:31.580 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/f61ac42c-0a4f-47d4-897d-92c4b358c7a7 - - - 200 - application/json;+charset=utf-8 139.4799ms
+2024-01-15 04:28:19.686 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Book/add application/json 98
+2024-01-15 04:28:19.696 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.AddBook (LHBookstore)'
+2024-01-15 04:28:19.706 +00:00 [INF] Route matched with {action = "AddBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddBook(LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:28:19.831 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 6), @p2='?' (DbType = DateTime), @p3='?' (Size = 6), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Books" ("Id", "Author", "CreatedAt", "Description", "IsDeleted", "QuantityAvailable", "Title", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-01-15 04:28:19.834 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:28:19.836 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.AddBook (LHBookstore) in 128.3697ms
+2024-01-15 04:28:19.845 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.AddBook (LHBookstore)'
+2024-01-15 04:28:19.849 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Book/add application/json 98 - 200 - application/json;+charset=utf-8 162.7841ms
+2024-01-15 04:28:36.840 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:28:36.866 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:28:36.869 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:28:36.884 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:28:36.891 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:28:36.894 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 23.2968ms
+2024-01-15 04:28:36.901 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:28:36.903 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 62.9480ms
+2024-01-15 04:28:58.844 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:28:58.890 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:28:58.892 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:28:58.906 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:28:58.914 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:28:58.919 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 24.4739ms
+2024-01-15 04:28:58.926 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:28:58.931 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 87.2564ms
+2024-01-15 04:29:39.499 +00:00 [INF] Request starting HTTP/2 DELETE https://localhost:32768/api/Book/delete/88b5a186-e701-41c4-b184-c81691c7d75e - -
+2024-01-15 04:29:39.512 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.DeleteBook (LHBookstore)'
+2024-01-15 04:29:39.524 +00:00 [INF] Route matched with {action = "DeleteBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBook(System.String) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:29:39.543 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:29:39.578 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Books"
+WHERE "Id" = @p0
+RETURNING 1;
+2024-01-15 04:29:39.597 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:29:39.606 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.DeleteBook (LHBookstore) in 80.4673ms
+2024-01-15 04:29:39.608 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.DeleteBook (LHBookstore)'
+2024-01-15 04:29:39.612 +00:00 [INF] Request finished HTTP/2 DELETE https://localhost:32768/api/Book/delete/88b5a186-e701-41c4-b184-c81691c7d75e - - - 200 - application/json;+charset=utf-8 114.3640ms
+2024-01-15 04:29:49.802 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:29:49.803 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:29:49.807 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:29:49.822 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:29:49.826 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:29:49.828 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 20.2985ms
+2024-01-15 04:29:49.835 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:29:49.837 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 36.1028ms
+2024-01-15 04:30:21.984 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 04:30:22.013 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:30:22.029 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 04:30:22.081 +00:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BookId", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 04:30:22.163 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-01-15 04:30:22.386 +00:00 [ERR] Error retrieving orders: SQLite Error 1: 'no such column: o.BookId'.
+2024-01-15 04:30:22.389 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:30:22.397 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 361.6172ms
+2024-01-15 04:30:22.401 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:30:22.403 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 400 - application/json;+charset=utf-8 421.3390ms
+2024-01-15 04:35:04.818 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 04:35:04.880 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 04:35:04.889 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 04:35:04.894 +00:00 [INF] Hosting environment: Development
+2024-01-15 04:35:04.897 +00:00 [INF] Content root path: /app
+2024-01-15 04:35:06.820 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 04:35:07.154 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 337.4829ms
+2024-01-15 04:35:09.326 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 04:35:10.038 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 711.3411ms
+2024-01-15 04:35:32.279 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 04:35:32.311 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:35:32.347 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 04:35:34.461 +00:00 [ERR] Failed executing DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BookId", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 04:35:34.521 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-01-15 04:35:34.663 +00:00 [ERR] Error retrieving orders: SQLite Error 1: 'no such column: o.BookId'.
+2024-01-15 04:35:34.683 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:35:34.714 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 2354.8652ms
+2024-01-15 04:35:34.716 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:35:34.738 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 400 - application/json;+charset=utf-8 2459.4758ms
+2024-01-15 04:36:41.836 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 04:36:41.888 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:36:41.891 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 04:36:51.728 +00:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BookId", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 04:36:51.747 +00:00 [ERR] An exception occurred while iterating over the results of a query for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: o.BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-01-15 04:39:27.422 +00:00 [ERR] Error retrieving orders: SQLite Error 1: 'no such column: o.BookId'.
+2024-01-15 04:39:27.495 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:39:27.497 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 165601.6862ms
+2024-01-15 04:39:27.499 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 04:39:27.503 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 400 - application/json;+charset=utf-8 165686.0426ms
+2024-01-15 04:39:45.690 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 04:39:45.697 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:39:45.729 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 04:39:45.798 +00:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 04:39:45.916 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 04:39:45.930 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 200.5166ms
+2024-01-15 04:39:45.930 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 04:39:45.931 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 241.9009ms
+2024-01-15 04:40:09.200 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 19
+2024-01-15 04:40:09.206 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 04:40:09.223 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 04:40:09.533 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:40:09.755 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 12), @p1='?' (DbType = DateTime), @p2='?' (Size = 401), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 13), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 04:40:10.327 +00:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("Id", "BookId", "CreatedAt", "IsDeleted", "OrderStatus", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-01-15 04:40:10.400 +00:00 [ERR] An exception occurred in the database while saving changes for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'table Orders has no column named BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'table Orders has no column named BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-01-15 04:40:10.583 +00:00 [ERR] Error placing order: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-15 04:40:10.588 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:40:10.606 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 1381.668ms
+2024-01-15 04:40:10.608 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 04:40:10.610 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 19 - 400 - application/json;+charset=utf-8 1410.3286ms
+2024-01-15 04:42:27.473 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 19
+2024-01-15 04:42:27.498 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 04:42:27.501 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 04:42:27.528 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 04:42:27.540 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 12), @p1='?' (DbType = DateTime), @p2='?' (Size = 401), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 13), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 04:42:27.574 +00:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("Id", "BookId", "CreatedAt", "IsDeleted", "OrderStatus", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-01-15 04:42:27.606 +00:00 [ERR] An exception occurred in the database while saving changes for context type 'LHBookstore.Infrastructure.LHBContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'table Orders has no column named BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'table Orders has no column named BookId'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-01-15 04:42:27.747 +00:00 [ERR] Error placing order: An error occurred while saving the entity changes. See the inner exception for details.
+2024-01-15 04:42:27.749 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 04:42:27.752 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 249.7428ms
+2024-01-15 04:42:27.754 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 04:42:27.759 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=f61ac42c-0a4f-47d4-897d-92c4b358c7a7 application/json 19 - 400 - application/json;+charset=utf-8 285.9415ms
+2024-01-15 05:00:23.556 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 05:00:23.690 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 05:00:23.706 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 05:00:23.711 +00:00 [INF] Hosting environment: Development
+2024-01-15 05:00:23.715 +00:00 [INF] Content root path: /app
+2024-01-15 05:00:25.812 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 05:00:26.395 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 597.8204ms
+2024-01-15 05:00:27.959 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 05:00:28.214 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 255.7176ms
+2024-01-15 05:00:38.607 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 05:00:38.641 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:00:38.686 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:00:48.106 +00:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 05:00:48.302 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:00:48.354 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 9657.4662ms
+2024-01-15 05:00:48.356 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:00:48.367 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 9759.8705ms
+2024-01-15 05:19:08.785 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 05:19:08.871 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 05:19:08.887 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 05:19:08.893 +00:00 [INF] Hosting environment: Development
+2024-01-15 05:19:08.898 +00:00 [INF] Content root path: /app
+2024-01-15 05:19:11.087 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 05:19:11.515 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 437.3773ms
+2024-01-15 05:19:13.532 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 05:19:14.224 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 692.2273ms
+2024-01-15 05:19:30.786 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 05:19:30.825 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:19:30.874 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:19:32.732 +00:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 05:19:32.864 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:19:32.907 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 2023.9402ms
+2024-01-15 05:19:32.909 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:19:32.922 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 2135.6265ms
+2024-01-15 05:20:20.693 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 05:20:20.723 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 05:20:20.738 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 05:20:20.854 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 05:20:20.905 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 05:20:20.920 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 181.4372ms
+2024-01-15 05:20:20.921 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 05:20:20.923 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 251.5768ms
+2024-01-15 05:20:49.625 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 19
+2024-01-15 05:20:49.640 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 05:20:49.656 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:20:49.992 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 05:20:50.227 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 18), @p1='?' (DbType = DateTime), @p2='?' (Size = 165), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 18), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 05:20:50.583 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("Id", "CreatedAt", "IsDeleted", "OrderStatus", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-01-15 05:20:50.609 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (DbType = DateTime), @p3='?' (DbType = Boolean), @p4='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("Id", "BookId", "CreatedAt", "IsDeleted", "OrderId", "Quantity", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-01-15 05:20:50.692 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:20:50.712 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 1055.2577ms
+2024-01-15 05:20:50.728 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 05:20:50.729 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=1a38fe6b-ea85-4f87-b1ce-80302d5cb3be application/json 19 - 200 - application/json;+charset=utf-8 1125.3356ms
+2024-01-15 05:22:13.467 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/343aead5-7fd4-4eb6-be35-f847cdeaa368 - -
+2024-01-15 05:22:13.473 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrderByIdAsync (LHBookstore)'
+2024-01-15 05:22:13.483 +00:00 [INF] Route matched with {action = "GetOrderById", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrderByIdAsync(System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:22:13.515 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2024-01-15 05:22:13.519 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.DTOs.Order.OrderResponseDto'.
+2024-01-15 05:22:13.521 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrderByIdAsync (LHBookstore) in 37.0826ms
+2024-01-15 05:22:13.522 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrderByIdAsync (LHBookstore)'
+2024-01-15 05:22:13.523 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/343aead5-7fd4-4eb6-be35-f847cdeaa368 - - - 200 - application/json;+charset=utf-8 98.0943ms
+2024-01-15 05:35:04.369 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32769/ - -
+2024-01-15 05:35:04.391 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32769/ - - - 307 0 - 21.9041ms
+2024-01-15 05:35:04.474 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/ - -
+2024-01-15 05:35:04.481 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/ - - - 404 0 - 8.8675ms
+2024-01-15 05:48:28.520 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 05:48:28.631 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 05:48:28.648 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 05:48:28.653 +00:00 [INF] Hosting environment: Development
+2024-01-15 05:48:28.659 +00:00 [INF] Content root path: /app
+2024-01-15 05:48:32.293 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 05:48:33.460 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 1181.5605ms
+2024-01-15 05:48:37.466 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 05:48:38.135 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 662.5302ms
+2024-01-15 05:48:47.737 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 05:48:47.757 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:48:47.838 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:48:51.653 +00:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 05:48:51.952 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:48:52.036 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 4179.0131ms
+2024-01-15 05:48:52.039 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:48:52.061 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 4323.9920ms
+2024-01-15 05:49:43.216 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 05:49:43.229 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:49:43.233 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:49:52.396 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 05:53:35.688 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:53:35.701 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 232466.8472ms
+2024-01-15 05:53:35.703 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:53:35.709 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 232495.1487ms
+2024-01-15 05:56:46.110 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 05:56:46.201 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 05:56:46.219 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 05:56:46.227 +00:00 [INF] Hosting environment: Development
+2024-01-15 05:56:46.231 +00:00 [INF] Content root path: /app
+2024-01-15 05:56:48.863 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 05:56:49.499 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 639.7878ms
+2024-01-15 05:56:52.391 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 05:56:52.952 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 560.7288ms
+2024-01-15 05:57:04.878 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 05:57:04.921 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:57:05.039 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 05:57:08.178 +00:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 05:57:08.464 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 05:57:08.554 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 3487.3947ms
+2024-01-15 05:57:08.560 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 05:57:08.593 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 3736.7856ms
+2024-01-15 06:02:38.868 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 06:02:38.981 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 06:02:38.995 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 06:02:39.000 +00:00 [INF] Hosting environment: Development
+2024-01-15 06:02:39.005 +00:00 [INF] Content root path: /app
+2024-01-15 06:02:42.095 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 06:02:42.508 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 418.7213ms
+2024-01-15 06:02:45.012 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 06:02:45.799 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 787.3406ms
+2024-01-15 06:02:59.084 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 06:02:59.111 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 06:02:59.184 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 06:03:02.348 +00:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 06:03:02.633 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 06:03:02.682 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore) in 3485.4526ms
+2024-01-15 06:03:02.684 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooks (LHBookstore)'
+2024-01-15 06:03:02.700 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 3637.6983ms
+2024-01-15 06:12:39.692 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 06:12:39.802 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 06:12:39.826 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 06:12:39.833 +00:00 [INF] Hosting environment: Development
+2024-01-15 06:12:39.841 +00:00 [INF] Content root path: /app
+2024-01-15 06:12:42.875 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 06:12:43.388 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 518.4835ms
+2024-01-15 06:12:46.012 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 06:12:46.754 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 742.0877ms
+2024-01-15 06:12:59.652 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - -
+2024-01-15 06:12:59.711 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 06:12:59.837 +00:00 [INF] Route matched with {action = "GetAllBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooksAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 06:13:02.800 +00:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+2024-01-15 06:13:03.027 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:13:03.082 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore) in 3224.1153ms
+2024-01-15 06:13:03.085 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.GetAllBooksAsync (LHBookstore)'
+2024-01-15 06:13:03.107 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Book/All-books?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 3455.5398ms
+2024-01-15 06:15:32.045 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Book/add application/json 98
+2024-01-15 06:15:32.062 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore)'
+2024-01-15 06:15:32.104 +00:00 [INF] Route matched with {action = "AddBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddBookAsync(LHBookstore.Application.DTOs.Book.BookRequestDto) on controller LHBookstore.Application.Controllers.BookController (LHBookstore).
+2024-01-15 06:15:32.683 +00:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 6), @p2='?' (DbType = DateTime), @p3='?' (Size = 6), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Books" ("Id", "Author", "CreatedAt", "Description", "IsDeleted", "QuantityAvailable", "Title", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-01-15 06:15:32.714 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Book.BookResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:15:32.724 +00:00 [INF] Executed action LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore) in 617.6725ms
+2024-01-15 06:15:32.726 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.BookController.AddBookAsync (LHBookstore)'
+2024-01-15 06:15:32.779 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Book/add application/json 98 - 200 - application/json;+charset=utf-8 794.2034ms
+2024-01-15 06:15:55.132 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 19
+2024-01-15 06:15:55.138 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:15:55.154 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 06:15:55.181 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:15:55.188 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 34.099ms
+2024-01-15 06:15:55.191 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:15:55.197 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 19 - 400 - application/json;+charset=utf-8 63.4708ms
+2024-01-15 06:16:07.275 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 20
+2024-01-15 06:16:07.284 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:16:07.291 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 06:16:07.675 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 06:16:07.679 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:16:07.682 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 387.7062ms
+2024-01-15 06:16:07.684 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:16:07.689 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 20 - 400 - application/json;+charset=utf-8 413.8270ms
+2024-01-15 06:16:17.078 +00:00 [INF] Request starting HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 19
+2024-01-15 06:16:17.081 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:16:17.087 +00:00 [INF] Route matched with {action = "PlaceOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PlaceOrderAsync(LHBookstore.Application.DTOs.Order.OrderRequestDto, System.String) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 06:16:17.252 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='"Text"', CommandTimeout='30']
+SELECT "b"."Id", "b"."Author", "b"."CreatedAt", "b"."Description", "b"."IsDeleted", "b"."QuantityAvailable", "b"."Title", "b"."UpdatedAt"
+FROM "Books" AS "b"
+WHERE "b"."Id" = @__p_0
+LIMIT 1
+2024-01-15 06:16:17.307 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 36), @p0='?' (Size = 6), @p1='?' (DbType = DateTime), @p2='?' (Size = 6), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 6), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Books" SET "Author" = @p0, "CreatedAt" = @p1, "Description" = @p2, "IsDeleted" = @p3, "QuantityAvailable" = @p4, "Title" = @p5, "UpdatedAt" = @p6
+WHERE "Id" = @p7
+RETURNING 1;
+2024-01-15 06:16:17.590 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = DateTime), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Orders" ("Id", "CreatedAt", "IsDeleted", "OrderStatus", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-01-15 06:16:17.606 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (Size = 36), @p2='?' (DbType = DateTime), @p3='?' (DbType = Boolean), @p4='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "OrderItems" ("Id", "BookId", "CreatedAt", "IsDeleted", "OrderId", "Quantity", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2024-01-15 06:16:17.656 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:16:17.694 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore) in 604.0498ms
+2024-01-15 06:16:17.723 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.PlaceOrderAsync (LHBookstore)'
+2024-01-15 06:16:17.728 +00:00 [INF] Request finished HTTP/2 POST https://localhost:32768/api/Order/place-order?bookId=d2bb94a8-718d-4978-be45-7135f9ccd0ff application/json 19 - 200 - application/json;+charset=utf-8 648.1805ms
+2024-01-15 06:23:42.428 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 06:23:42.525 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 06:23:42.548 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 06:23:42.553 +00:00 [INF] Hosting environment: Development
+2024-01-15 06:23:42.558 +00:00 [INF] Content root path: /app
+2024-01-15 06:23:45.767 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 06:23:46.228 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 467.2677ms
+2024-01-15 06:23:48.616 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 06:23:49.400 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 783.8076ms
+2024-01-15 06:24:01.151 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 06:24:01.174 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 06:24:01.237 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 06:24:04.302 +00:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 06:24:04.521 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 06:24:04.589 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 3338.7526ms
+2024-01-15 06:24:04.592 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 06:24:04.615 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 3464.6961ms

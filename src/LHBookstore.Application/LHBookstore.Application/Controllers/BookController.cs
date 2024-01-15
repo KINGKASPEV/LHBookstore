@@ -16,7 +16,7 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddBook([FromBody] BookRequestDto book)
+        public async Task<IActionResult> AddBookAsync([FromBody] BookRequestDto book)
         {
             var response = await _bookServices.AddBookAsync(book);
 
@@ -29,7 +29,7 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpPut("edit/{id}")]
-        public async Task<IActionResult> UpdateBook(string id, [FromBody] BookRequestDto book)
+        public async Task<IActionResult> UpdateBookAsync(string id, [FromBody] BookRequestDto book)
         {
             var response = await _bookServices.UpdateBookAsync(id, book);
 
@@ -42,7 +42,7 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpGet("All-books")]
-        public async Task<IActionResult> GetAllBooks([FromQuery] int page, [FromQuery] int perPage)
+        public async Task<IActionResult> GetAllBooksAsync([FromQuery] int page, [FromQuery] int perPage)
         {
             var response = await _bookServices.GetAllBooksAsync(page, perPage);
 
@@ -55,7 +55,7 @@ namespace LHBookstore.Application.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBookById(string id)
+        public async Task<IActionResult> GetBookByIdAsync(string id)
         {
             var response = await _bookServices.GetBookByIdAsync(id);
 
@@ -67,10 +67,8 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
-        
-
         [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteBook(string id)
+        public async Task<IActionResult> DeleteBookAsync(string id)
         {
             var response = await _bookServices.DeleteBookAsync(id);
 

@@ -12,15 +12,10 @@ namespace LHBookstore.Mapper
             CreateMap<BookRequestDto, Book>();
             CreateMap<Book, BookResponseDto>();
             CreateMap<OrderRequestDto, Order>();
-            CreateMap<Order, OrderResponseDto>();
-            //CreateMap<OrderRequestDto, Order>()
-            //    .ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => new List<OrderItem>
-            //    {
-            //        new OrderItem
-            //        {
-            //            Quantity = src.Quantity
-            //        }
-            //    }));
+            CreateMap<Order, OrderResponseDto>()
+            .ForMember(dest => dest.Quantity, opt => opt.MapFrom(src => src.OrderItems.Sum(item => item.Quantity)))
+            .ForMember(dest => dest.OrderItems, opt => opt.MapFrom(src => src.OrderItems)); // Add this line
+            CreateMap<OrderItem, OrderItemResponseDto>();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace LHBookstore.Application.ServiceExtensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            //services.AddScoped<IConnectionProvider, ConnectionProvider>();
+            //services.AddScoped<InventoryManagementService>();
             services.AddDbContext<LHBContext>(options =>
             options.UseSqlite(config.GetConnectionString("DefaultConnection")));
         }

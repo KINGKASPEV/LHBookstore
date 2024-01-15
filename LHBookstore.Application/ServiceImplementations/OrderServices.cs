@@ -30,11 +30,13 @@ namespace LHBookstore.Application.ServiceImplementations
                 {
                     return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
                 }
-
                 var orders = await _unitOfWork.OrderRepository.GetAllOrdersAsync();
+
                 var paginatedOrders = await Pagination<Order>.GetPager(orders, perPage, page, b => b.Id, b => b.Id);
 
                 var orderDtos = _mapper.Map<List<OrderResponseDto>>(paginatedOrders.Data);
+
+                orderDtos.ForEach(dto => dto.Quantity = dto.OrderItems.Sum(item => item.Quantity));
 
                 var pageResult = new PageResult<List<OrderResponseDto>>
                 {
@@ -54,23 +56,25 @@ namespace LHBookstore.Application.ServiceImplementations
             }
         }
 
-        public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string orderId)
+        public async Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string id)
         {
             try
             {
-                if (string.IsNullOrEmpty(orderId))
+                if (string.IsNullOrEmpty(id))
                 {
                     return ApiResponse<OrderResponseDto>.Failed(false, "Order id cannot be null or empty", 400, null);
                 }
 
-                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(orderId);
+                var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(id);
 
                 if (order == null)
                 {
-                    return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {orderId} not found", 404, null);
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {id} not found", 404, null);
                 }
 
                 var orderDto = _mapper.Map<OrderResponseDto>(order);
+
+                orderDto.Quantity = orderDto.OrderItems.Sum(item => item.Quantity);
 
                 return ApiResponse<OrderResponseDto>.Success(orderDto, "Order retrieved successfully", 200);
             }
@@ -94,19 +98,31 @@ namespace LHBookstore.Application.ServiceImplementations
                 {
                     return ApiResponse<OrderResponseDto>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
                 }
-
-                // Retrieve book details based on bookId 
                 var book = await _unitOfWork.BookRepository.GetBookByIdAsync(bookId);
-
                 if (book == null)
                 {
                     return ApiResponse<OrderResponseDto>.Failed(false, $"Book with ID {bookId} not found", 404, null);
                 }
 
-                var order = _mapper.Map<Order>(orderRequest);
+                if (orderRequest.Quantity > book.QuantityAvailable)
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Not enough stock available. Available quantity: {book.QuantityAvailable}", 400, null);
+                }
+                var orderItem = new OrderItem
+                {
+                    Quantity = orderRequest.Quantity,
+                    BookId = bookId,
+                };
+                var orderItemList = new List<OrderItem>();
+                orderItemList.Add(orderItem);
+                var order = new Order
+                {
+                    OrderItems = orderItemList,
+                    OrderStatus = 0
+                };
 
-                // Set the Book property of the order to the retrieved book
-                order.Book = book;
+                book.QuantityAvailable -= orderRequest.Quantity;
+                await _unitOfWork.BookRepository.UpdateBookAsync(book);
 
                 await _unitOfWork.OrderRepository.AddOrderAsync(order);
                 await _unitOfWork.SaveChangesAsync();
@@ -117,7 +133,7 @@ namespace LHBookstore.Application.ServiceImplementations
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error placing order: {ex.Message}");
+                _logger.LogError($"Error placing order: {ex.Message}. Inner Exception: {ex.InnerException?.Message}");
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
             }
         }
@@ -142,7 +158,22 @@ namespace LHBookstore.Application.ServiceImplementations
                 {
                     return ApiResponse<OrderResponseDto>.Failed(false, $"Order with id {id} not found", 404, null);
                 }
+                if (orderRequest.Quantity > existingOrder.OrderItems.Sum(item => item.Quantity))
+                {
+                    var quantityDifference = orderRequest.Quantity - existingOrder.OrderItems.Sum(item => item.Quantity);
 
+                    var book = existingOrder.OrderItems.FirstOrDefault()?.Book;
+
+                    if (book != null && quantityDifference > book.QuantityAvailable)
+                    {
+                        return ApiResponse<OrderResponseDto>.Failed(false, $"Not enough stock available. Available quantity: {book.QuantityAvailable}", 400, null);
+                    }
+
+                    foreach (var orderItem in existingOrder.OrderItems)
+                    {
+                        orderItem.Quantity = orderRequest.Quantity;
+                    }
+                }
                 _mapper.Map(orderRequest, existingOrder);
 
                 await _unitOfWork.OrderRepository.UpdateOrderAsync(existingOrder);
@@ -158,7 +189,6 @@ namespace LHBookstore.Application.ServiceImplementations
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
             }
         }
-
 
         public async Task<ApiResponse<string>> CancelOrderAsync(string orderId)
         {

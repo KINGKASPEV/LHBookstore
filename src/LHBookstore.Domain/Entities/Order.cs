@@ -6,6 +6,5 @@ namespace LHBookstore.Domain.Entities
     {
         public List<OrderItem> OrderItems { get; set; }
         public OrderStatus OrderStatus { get; set; }
-        public Book Book { get; set; }
     }
 }
