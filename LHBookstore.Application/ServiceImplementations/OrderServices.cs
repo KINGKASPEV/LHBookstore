@@ -5,6 +5,7 @@ using LHBookstore.Application.Interfaces.Services;
 using LHBookstore.Application.Utilities;
 using LHBookstore.Domain;
 using LHBookstore.Domain.Entities;
+using LHBookstore.Domain.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace LHBookstore.Application.ServiceImplementations
@@ -189,6 +190,49 @@ namespace LHBookstore.Application.ServiceImplementations
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while updating the order", 500, new List<string> { ex.Message });
             }
         }
+
+        public async Task<ApiResponse<PageResult<List<OrderResponseDto>>>> GetOrdersByStatusAsync(string orderStatus, int page, int perPage)
+        {
+            try
+            {
+                if (page <= 0 || perPage <= 0)
+                {
+                    return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "Page and PerPage must be greater than zero", 400, null);
+                }
+
+                if (!Enum.TryParse<OrderStatus>(orderStatus, out var parsedStatus))
+                {
+                    return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, $"Invalid order status: {orderStatus}", 400, null);
+                }
+
+                var orders = await _unitOfWork.OrderRepository.FindOrdersAsync(o => o.OrderStatus == parsedStatus);
+
+                var paginatedOrders = await Pagination<Order>.GetPager(orders, perPage, page, b => b.Id, b => b.Id);
+
+                var orderDtos = _mapper.Map<List<OrderResponseDto>>(paginatedOrders.Data);
+
+                orderDtos.ForEach(dto => dto.Quantity = dto.OrderItems.Sum(item => item.Quantity));
+
+                var pageResult = new PageResult<List<OrderResponseDto>>
+                {
+                    Data = orderDtos,
+                    TotalPageCount = paginatedOrders.TotalPageCount,
+                    CurrentPage = paginatedOrders.CurrentPage,
+                    PerPage = paginatedOrders.PerPage,
+                    TotalCount = paginatedOrders.TotalCount
+                };
+
+                return ApiResponse<PageResult<List<OrderResponseDto>>>.Success(pageResult, "Orders retrieved successfully", 200);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error retrieving orders by status: {ex.Message}");
+                return ApiResponse<PageResult<List<OrderResponseDto>>>.Failed(false, "An error occurred while retrieving orders by status", 500, new List<string> { ex.Message });
+            }
+        }
+
+
+
 
         public async Task<ApiResponse<string>> CancelOrderAsync(string orderId)
         {

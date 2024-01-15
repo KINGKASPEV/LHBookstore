@@ -17,6 +17,8 @@ namespace LHBookstore.Application.Implementations.Repositories
 
         public async Task<List<Order>> GetAllOrdersAsync() => await GetAllAsync();
 
+        public async Task<List<Order>> GetOrdersByStatusAsync(string orderStatus) => await FindByConditionAsync(order => order.OrderStatus.ToString() == orderStatus);
+
         public async Task UpdateOrderAsync(Order order)
         {
             Update(order);

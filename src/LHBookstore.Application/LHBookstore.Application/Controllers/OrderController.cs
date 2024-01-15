@@ -59,6 +59,18 @@ namespace LHBookstore.Application.Controllers
             return BadRequest(response);
         }
 
+        [HttpGet("get-by-status")]
+        public async Task<IActionResult> GetOrdersByStatusAsync([FromQuery] string status, [FromQuery] int page, [FromQuery] int perPage)
+        {
+            var response = await _orderService.GetOrdersByStatusAsync(status, page, perPage);
+            if (response.Succeeded)
+            {
+                return Ok(response.Data);
+            }
+            return BadRequest(response);
+        }
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> CancelOrderAsync(string id)
         {

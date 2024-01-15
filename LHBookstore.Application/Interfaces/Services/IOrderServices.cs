@@ -10,6 +10,7 @@ namespace LHBookstore.Application.Interfaces.Services
         Task<ApiResponse<OrderResponseDto>> GetOrderByIdAsync(string id);
         Task<ApiResponse<OrderResponseDto>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId);
         Task<ApiResponse<OrderResponseDto>> UpdateOrderAsync(string id, OrderRequestDto orderRequest);
+        Task<ApiResponse<PageResult<List<OrderResponseDto>>>> GetOrdersByStatusAsync(string status, int page, int perPage);
         Task<ApiResponse<string>> CancelOrderAsync(string id);
     }
 }

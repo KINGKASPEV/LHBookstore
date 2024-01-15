@@ -11,5 +11,7 @@ namespace LHBookstore.Application.Interfaces.Repositories
         Task<List<Order>> FindOrdersAsync(Expression<Func<Order, bool>> condition);
         Task<Order> GetOrderByIdAsync(string id);
         Task UpdateOrderAsync(Order order);
+        Task<List<Order>> GetOrdersByStatusAsync(string orderStatus);
+
     }
 }

@@ -662,3 +662,136 @@ FROM "Orders" AS "o"
 2024-01-15 06:24:04.589 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 3338.7526ms
 2024-01-15 06:24:04.592 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
 2024-01-15 06:24:04.615 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 3464.6961ms
+2024-01-15 08:12:35.336 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 08:12:35.418 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 08:12:35.430 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 08:12:35.438 +00:00 [INF] Hosting environment: Development
+2024-01-15 08:12:35.441 +00:00 [INF] Content root path: /app
+2024-01-15 08:12:37.478 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 08:12:37.947 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 477.6068ms
+2024-01-15 08:12:40.127 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 08:12:40.710 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 583.3085ms
+2024-01-15 08:12:57.763 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=10 - -
+2024-01-15 08:12:57.784 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:12:57.837 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:13:00.231 +00:00 [ERR] Error retrieving orders by status: The LINQ expression 'DbSet<Order>()
+    .Where(o => o.OrderStatus.ToString() == __orderStatus_0)' could not be translated. Additional information: Translation of method 'object.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-01-15 08:13:00.249 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 08:13:00.269 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 2424.2451ms
+2024-01-15 08:13:00.276 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:13:00.285 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=10 - - - 400 - application/json;+charset=utf-8 2522.7560ms
+2024-01-15 08:14:43.155 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 08:14:43.283 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 08:14:43.296 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 08:14:43.301 +00:00 [INF] Hosting environment: Development
+2024-01-15 08:14:43.305 +00:00 [INF] Content root path: /app
+2024-01-15 08:14:45.851 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 08:14:46.499 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 655.8877ms
+2024-01-15 08:14:48.454 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 08:14:48.762 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 308.0669ms
+2024-01-15 08:15:34.534 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?page=1&perPage=3 - -
+2024-01-15 08:15:34.559 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:15:34.620 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:15:35.329 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-01-15 08:15:35.351 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 719.5993ms
+2024-01-15 08:15:35.360 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:15:35.365 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?page=1&perPage=3 - - - 400 - application/problem+json;+charset=utf-8 834.3555ms
+2024-01-15 08:15:45.896 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - -
+2024-01-15 08:15:45.902 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:15:45.906 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:15:48.060 +00:00 [ERR] Error retrieving orders by status: The LINQ expression 'DbSet<Order>()
+    .Where(o => o.OrderStatus.ToString() == __orderStatus_0)' could not be translated. Additional information: Translation of method 'object.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+2024-01-15 08:15:48.067 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 08:15:48.075 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 2168.129ms
+2024-01-15 08:15:48.078 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:15:48.094 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - - - 400 - application/json;+charset=utf-8 2198.1217ms
+2024-01-15 08:18:05.687 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 08:18:05.752 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 08:18:05.762 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 08:18:05.766 +00:00 [INF] Hosting environment: Development
+2024-01-15 08:18:05.772 +00:00 [INF] Content root path: /app
+2024-01-15 08:18:07.797 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 08:18:08.395 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 603.5863ms
+2024-01-15 08:18:10.439 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 08:18:11.164 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 725.0734ms
+2024-01-15 08:18:32.174 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=pending&page=1&perPage=10 - -
+2024-01-15 08:18:32.188 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:18:32.269 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:18:32.913 +00:00 [INF] Executing BadRequestObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 08:18:32.934 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 655.9789ms
+2024-01-15 08:18:32.942 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:18:32.947 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=pending&page=1&perPage=10 - - - 400 - application/json;+charset=utf-8 772.7030ms
+2024-01-15 08:18:45.756 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=10 - -
+2024-01-15 08:18:45.763 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:18:45.765 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:18:47.376 +00:00 [INF] Executed DbCommand (68ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 08:18:47.514 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 08:18:47.542 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 1773.8641ms
+2024-01-15 08:18:47.543 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:18:47.553 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=10 - - - 200 - application/json;+charset=utf-8 1797.5206ms
+2024-01-15 08:19:56.108 +00:00 [INF] Now listening on: https://[::]:443
+2024-01-15 08:19:56.206 +00:00 [INF] Now listening on: http://[::]:80
+2024-01-15 08:19:56.227 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-15 08:19:56.233 +00:00 [INF] Hosting environment: Development
+2024-01-15 08:19:56.241 +00:00 [INF] Content root path: /app
+2024-01-15 08:19:59.746 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/index.html - -
+2024-01-15 08:20:00.698 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/index.html - - - 200 - text/html;charset=utf-8 957.8784ms
+2024-01-15 08:20:04.435 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - -
+2024-01-15 08:20:05.262 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 827.7291ms
+2024-01-15 08:20:24.351 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=1&page=1&perPage=3 - -
+2024-01-15 08:20:24.387 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:24.442 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:20:26.324 +00:00 [INF] Executed DbCommand (50ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 08:20:26.380 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 08:20:26.406 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 1955.8648ms
+2024-01-15 08:20:26.407 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:26.417 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=1&page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 2065.5605ms
+2024-01-15 08:20:32.941 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=2&page=1&perPage=3 - -
+2024-01-15 08:20:32.947 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:32.965 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:20:33.095 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 08:20:33.100 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 08:20:33.103 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 129.5313ms
+2024-01-15 08:20:33.107 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:33.109 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=2&page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 169.0002ms
+2024-01-15 08:20:38.914 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=3&page=1&perPage=3 - -
+2024-01-15 08:20:38.918 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:38.919 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:20:38.956 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 08:20:38.958 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 08:20:38.960 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 40.4637ms
+2024-01-15 08:20:38.962 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:38.968 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=3&page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 54.7919ms
+2024-01-15 08:20:44.791 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - -
+2024-01-15 08:20:44.792 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:44.798 +00:00 [INF] Route matched with {action = "GetOrdersByStatus", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOrdersByStatusAsync(System.String, Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:20:44.806 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__parsedStatus_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+WHERE "o"."OrderStatus" = @__parsedStatus_0
+2024-01-15 08:20:44.897 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-01-15 08:20:44.909 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore) in 109.3852ms
+2024-01-15 08:20:44.909 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetOrdersByStatusAsync (LHBookstore)'
+2024-01-15 08:20:44.910 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/get-by-status?status=0&page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 119.9222ms
+2024-01-15 08:21:44.773 +00:00 [INF] Request starting HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - -
+2024-01-15 08:21:44.781 +00:00 [INF] Executing endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 08:21:44.794 +00:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllOrdersAsync(Int32, Int32) on controller LHBookstore.Application.Controllers.OrderController (LHBookstore).
+2024-01-15 08:21:44.816 +00:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."CreatedAt", "o"."IsDeleted", "o"."OrderStatus", "o"."UpdatedAt"
+FROM "Orders" AS "o"
+2024-01-15 08:21:44.823 +00:00 [INF] Executing OkObjectResult, writing value of type 'LHBookstore.Domain.ApiResponse`1[[LHBookstore.Application.Utilities.PageResult`1[[System.Collections.Generic.List`1[[LHBookstore.Application.DTOs.Order.OrderResponseDto, LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], LHBookstore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-15 08:21:44.832 +00:00 [INF] Executed action LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore) in 37.7646ms
+2024-01-15 08:21:44.834 +00:00 [INF] Executed endpoint 'LHBookstore.Application.Controllers.OrderController.GetAllOrdersAsync (LHBookstore)'
+2024-01-15 08:21:44.837 +00:00 [INF] Request finished HTTP/2 GET https://localhost:32768/api/Order/all-orders?page=1&perPage=3 - - - 200 - application/json;+charset=utf-8 84.7681ms
