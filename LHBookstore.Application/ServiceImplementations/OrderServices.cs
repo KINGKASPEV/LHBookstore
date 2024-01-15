@@ -23,6 +23,58 @@ namespace LHBookstore.Application.ServiceImplementations
             _logger = logger;
         }
 
+        public async Task<ApiResponse<OrderResponseDto>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId)
+        {
+            try
+            {
+                if (orderRequest == null || string.IsNullOrEmpty(bookId))
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Order request or book ID is null or empty", 400, null);
+                }
+
+                if (orderRequest.Quantity < 1)
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
+                }
+                var book = await _unitOfWork.BookRepository.GetBookByIdAsync(bookId);
+                if (book == null)
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Book with ID {bookId} not found", 404, null);
+                }
+
+                if (orderRequest.Quantity > book.QuantityAvailable)
+                {
+                    return ApiResponse<OrderResponseDto>.Failed(false, $"Not enough stock available. Available quantity: {book.QuantityAvailable}", 400, null);
+                }
+                var orderItem = new OrderItem
+                {
+                    Quantity = orderRequest.Quantity,
+                    BookId = bookId,
+                };
+                var orderItemList = new List<OrderItem>();
+                orderItemList.Add(orderItem);
+                var order = new Order
+                {
+                    OrderItems = orderItemList,
+                    OrderStatus = 0
+                };
+
+                book.QuantityAvailable -= orderRequest.Quantity;
+                await _unitOfWork.BookRepository.UpdateBookAsync(book);
+
+                await _unitOfWork.OrderRepository.AddOrderAsync(order);
+                await _unitOfWork.SaveChangesAsync();
+
+                var orderResponse = _mapper.Map<OrderResponseDto>(order);
+
+                return ApiResponse<OrderResponseDto>.Success(orderResponse, "Order placed successfully", 201);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error placing order: {ex.Message}. Inner Exception: {ex.InnerException?.Message}");
+                return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
+            }
+        }
         public async Task<ApiResponse<PageResult<List<OrderResponseDto>>>> GetAllOrdersAsync(int page, int perPage)
         {
             try
@@ -83,59 +135,6 @@ namespace LHBookstore.Application.ServiceImplementations
             {
                 _logger.LogError($"Error retrieving orders: {ex.Message}");
                 return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while retrieving the order", 500, new List<string> { ex.Message });
-            }
-        }
-
-        public async Task<ApiResponse<OrderResponseDto>> PlaceOrderAsync(OrderRequestDto orderRequest, string bookId)
-        {
-            try
-            {
-                if (orderRequest == null || string.IsNullOrEmpty(bookId))
-                {
-                    return ApiResponse<OrderResponseDto>.Failed(false, "Order request or book ID is null or empty", 400, null);
-                }
-
-                if (orderRequest.Quantity < 1)
-                {
-                    return ApiResponse<OrderResponseDto>.Failed(false, "Quantity must be greater than 0 before an order can be placed", 400, null);
-                }
-                var book = await _unitOfWork.BookRepository.GetBookByIdAsync(bookId);
-                if (book == null)
-                {
-                    return ApiResponse<OrderResponseDto>.Failed(false, $"Book with ID {bookId} not found", 404, null);
-                }
-
-                if (orderRequest.Quantity > book.QuantityAvailable)
-                {
-                    return ApiResponse<OrderResponseDto>.Failed(false, $"Not enough stock available. Available quantity: {book.QuantityAvailable}", 400, null);
-                }
-                var orderItem = new OrderItem
-                {
-                    Quantity = orderRequest.Quantity,
-                    BookId = bookId,
-                };
-                var orderItemList = new List<OrderItem>();
-                orderItemList.Add(orderItem);
-                var order = new Order
-                {
-                    OrderItems = orderItemList,
-                    OrderStatus = 0
-                };
-
-                book.QuantityAvailable -= orderRequest.Quantity;
-                await _unitOfWork.BookRepository.UpdateBookAsync(book);
-
-                await _unitOfWork.OrderRepository.AddOrderAsync(order);
-                await _unitOfWork.SaveChangesAsync();
-
-                var orderResponse = _mapper.Map<OrderResponseDto>(order);
-
-                return ApiResponse<OrderResponseDto>.Success(orderResponse, "Order placed successfully", 201);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error placing order: {ex.Message}. Inner Exception: {ex.InnerException?.Message}");
-                return ApiResponse<OrderResponseDto>.Failed(false, "An error occurred while placing the order", 500, new List<string> { ex.Message });
             }
         }
 
